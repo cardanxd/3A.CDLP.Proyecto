@@ -15,7 +15,7 @@ namespace WorkIO.Models
         [Required(ErrorMessage = "Empresa is required.")]
         [ForeignKey("Empresa")]
         public string NomEmpresa { get; set; }
-        public Empresa empresa { get; set; }
+        public Empresa Empresa { get; set; }
 
         [Display(Name = "Candidato")]
         [Required(ErrorMessage = "Candidato is required.")]
