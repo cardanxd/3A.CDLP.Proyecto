@@ -17,7 +17,7 @@ namespace WorkIO.Models
 
         [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }
-        public Usuario Usuario { get; set; }
+        public Usuario usuario { get; set; }
 
     }
 }

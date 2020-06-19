@@ -15,6 +15,6 @@ namespace WorkIO.Models
         [MinLength(6, ErrorMessage = "Password should at contain 3 character")]
         public string Password { get; set; }
 
-        public Persona Persona { get; set; }
+        public Persona persona { get; set; }
     }
 }

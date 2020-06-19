@@ -41,6 +41,6 @@ namespace WorkIO.Models
         [Required(ErrorMessage = "Candidato is required.")]
         [ForeignKey("Candidato")]
         public string Nombre { get; set; }
-        public Candidato Candidato { get; set; }
+        public Candidato candidato { get; set; }
     }
 }
