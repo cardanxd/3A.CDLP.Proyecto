@@ -1,0 +1,12 @@
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\bin\Debug\netcoreapp3.1\WorkIO.Models.deps.json
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\bin\Debug\netcoreapp3.1\WorkIO.Models.dll
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.csprojAssemblyReference.cache
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.AssemblyInfoInputs.cache
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.AssemblyInfo.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\bin\Debug\netcoreapp3.1\WorkIO.Models.runtimeconfig.json
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\bin\Debug\netcoreapp3.1\WorkIO.Models.runtimeconfig.dev.json
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.genruntimeconfig.cache
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.csproj.CoreCompileInputs.cache
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\bin\Debug\netcoreapp3.1\WorkIO.Models.pdb
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.dll
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.pdb

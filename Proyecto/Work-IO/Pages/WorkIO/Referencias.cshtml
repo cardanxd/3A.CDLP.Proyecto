@@ -1,0 +1,101 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.ReferenciasModel
+@{
+    ViewData["Title"] = "Referencias";
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">
+            <h3 class="dark-grey">Agregar Referencias</h3>
+            <div class="col-md-6">
+
+                <div class="form-group col-lg-6">
+                    <label for="empresa">Nombre de la empresa:</label>
+                    <input type="text" name="NameEmpresa" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Telefono</label>
+                    <input type="tel" name="Telefono" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" name="Direccion" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="nameInformante">Nombre del informante</label>
+                    <input type="text" name="NameInformante" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="nameJefe">Nombre del Jefe</label>
+                    <input type="text" id="nameJefe" class="form-control" name="nameJefe">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="puestoInformante">Puesto del informante</label>
+                    <input type="text" name="puestoInformante" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="puestoJefe">Puesto del jefe</label>
+                    <input type="text" name="puestoJefe" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="puestoCandidato">Puesto del candidato</label>
+                    <input type="text" name="nacionalidad" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="sueldo">Sueldo Mensual</label>
+                    <input type="text" name="sueldo" class="form-control" id="" value="">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6">
+
+                
+
+                <div class="form-group col-lg-6">
+                    <label>Inicio de labores:</label>
+                    <input type="date" id="inicioLabores" class="form-control" name="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Fin de labores:</label>
+                    <input type="date" id="finLabores" class="form-control" name="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="tipoContrato">Tipo de contrato</label>
+                    <input type="text" name="tipoContrato" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="funcion">Funciones del puesto</label>
+                    <input type="text" name="funciones" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label class="control-label col-sm-12" for="motivos">Motivos de separacion:</label>
+                    <div class="col-sm-12">
+                        <textarea class="form-control" rows="5" id="motivos"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6"><input type="submit" value="Cancelar" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Registrar</a></div>
+            </div>
+        </div>
+    </section>
+</div>

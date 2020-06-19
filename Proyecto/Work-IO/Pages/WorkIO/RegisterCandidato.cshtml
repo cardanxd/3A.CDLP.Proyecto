@@ -1,0 +1,104 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.RegisterCandidatoModel
+@{
+    ViewData["Title"] = "RegisterCandidato";
+}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">
+            <h3 class="dark-grey">Registro del candidato</h3>
+            <div class="col-md-6">
+
+                <div class="form-group col-lg-12">
+                    <label for="empresa">Nombre de la empresa:</label>
+                    <select name="empresas" id="empresas" class="form-control">
+                        <option value="">--</option>
+                        <option value="">Aquí van las empresas registradas</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>Nombre completo del candidato</label>
+                    <input type="text" name="CandidatoName" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="sexo">Sexo</label>
+                    <select name="sexo" id="sexo" class="form-control">
+                        <option value="">--</option>
+                        <option value="masculino">MASCULINO</option>
+                        <option value="femenino">FEMENINO</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Edad</label>
+                    <input type="text" name="Edad" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Birthday:</label>
+                    <input type="date" id="birthday" class="form-control" name="birthday">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Lugar de nacimiento</label>
+                    <input type="text" name="LNacimiento" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>RFC</label>
+                    <input type="text" name="rfc" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>CURP</label>
+                    <input type="text" name="curp" class="form-control" id="" value="">
+                </div>
+
+
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="form-group col-lg-6">
+                    <label>Nacionalidad</label>
+                    <input type="text" name="nacionalidad" class="form-control" id="" value="">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>IMSS</label>
+                    <input type="text" name="imss" class="form-control" id="" value="">
+                </div>
+
+
+                <div class="form-group col-lg-6">
+                    <input type="checkbox" id="ine" name="INE" value="">
+                    <label for="ine"> INE</label><br>
+                    <input type="checkbox" id="licencia" name="Licencia" value="">
+                    <label for="licencia"> Licencia de manejo</label><br>
+                    <input type="checkbox" id="antecedentes" name="Antecedentes" value="">
+                    <label for="antecedentes"> Antecedentes penales</label><br>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <input type="checkbox" id="cartilla" name="Cartilla" value="">
+                    <label for="pasaporte"> Cartilla militar</label><br>
+                    <input type="checkbox" id="pasaporte" name="Pasaporte" value="">
+                    <label for="pasaporte"> Pasaporte laboral</label><br>
+                    <input type="checkbox" id="visa" name="visa" value="">
+                    <label for="visa"> Visa</label><br>
+                    <br /><br /><br /><br /><br /><br /><br />
+                </div>
+                
+                <div class="col-xs-12 col-md-6"><input type="submit" value="Cancelar" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Registrar</a></div>
+            </div>
+        </div>
+    </section>
+</div>
