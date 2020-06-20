@@ -8,39 +8,40 @@ namespace WorkIO.Models
 {
     public class Documentos: BaseEntity
     {
+        [Display(Name = "Id")]
+        public int DocumentoID { get; set; }
         [Display(Prompt = "Visa")]
+        public bool? Visa { get; set; }
 
-        public Boolean Visa { get; set; }
         [Display(Prompt = "Cartilla")]
+        public bool? Cartilla { get; set; }
 
-        public Boolean Cartilla { get; set; }
         [Display(Prompt = "Curp")]
-
         public string Curp { get; set; }
+
         [Display(Prompt = "Imss")]
-
         public string Imss { get; set; }
+
         [Display(Prompt = "RFC")]
-
         public string Rfc { get; set; }
+
         [Display(Prompt = "Antecedentes")]
+        public bool? Antecedentes { get; set; }
 
-        public Boolean Antecedentes { get; set; }
         [Display(Prompt = "Pasaporte")]
+        public bool? Pasaporte { get; set; }
 
-        public Boolean Pasaporte { get; set; }
         [Display(Prompt = "Licencia")]
+        public bool? Licencia { get; set; }
 
-        public Boolean Licencia { get; set; }
         [Display(Prompt = "INE")]
-
-        public Boolean Ine { get; set; }
+        public bool? Ine { get; set; }
 
         // Definimos nuestras referencias
         [Display(Name = "Candidato")]
         [Required(ErrorMessage = "Candidato is required.")]
         [ForeignKey("Candidato")]
-        public string Nombre { get; set; }
-        public Candidato candidato { get; set; }
+        public int CandidatoID { get; set; }
+        public Candidato Candidato { get; set; }
     }
 }

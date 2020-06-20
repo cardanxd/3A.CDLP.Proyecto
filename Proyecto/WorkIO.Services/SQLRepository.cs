@@ -10,7 +10,7 @@ namespace WorkIO.Services
     public class SQLRepository<T> : IRepository<T> where T : BaseEntity
     {
         protected readonly AppDBContext context;
-        private DbSet<T> entities;
+        private readonly DbSet<T> entities;
         public SQLRepository(AppDBContext context)
         {
             this.context = context;

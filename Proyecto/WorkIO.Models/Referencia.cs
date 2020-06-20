@@ -8,8 +8,9 @@ namespace WorkIO.Models
 {
     public class Referencia: BaseEntity
     {
+        [Display(Name = "Id")]
+        public int ReferenciaID { get; set; }
         [Display(Prompt = "Nombre de la empresa")]
-
         public string NomEmpresa { get; set; }
         [Display(Name = "Telefono de la empresa", Prompt = "10 digitos")]
         public string Telefono { get; set; }
@@ -45,7 +46,7 @@ namespace WorkIO.Models
         [Display(Name = "Candidato")]
         [Required(ErrorMessage = "Candidato is required.")]
         [ForeignKey("Candidato")]
-        public string Nombre { get; set; }
-        public Candidato candidato { get; set; }
+        public int CandidatoID { get; set; }
+        public Candidato Candidato { get; set; }
     }
 }
