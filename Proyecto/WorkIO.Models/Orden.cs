@@ -8,7 +8,9 @@ namespace WorkIO.Models
 {
     public class Orden: BaseEntity
     {
-       
+        [Display(Name = "Id")]
+        public int OrdenID { get; set; }
+
         // Definimos nuestras referencias
         [Display(Name = "Empresa y Candidato")]
         [Required(ErrorMessage = "Empresa y Candidato is required.")]

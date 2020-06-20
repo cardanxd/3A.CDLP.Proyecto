@@ -8,6 +8,7 @@ namespace WorkIO.Models
 {
     public class BaseEntity : IEntity
     {
+        [Key]
         public int Id { get; set; }
         public DateTime CreatedAT { get; set; } = DateTime.Now;
         public DateTime? UpdatedAT { get; set; }
