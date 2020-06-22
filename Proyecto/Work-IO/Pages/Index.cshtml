@@ -15,24 +15,23 @@
         <div class="row">
             <div class="col-md-4 login-sec">
                 <h2 class="text-center">Iniciar sesion</h2>
-                <form class="login-form">
+                <form action="" class="login-form">
                     <div class="form-group">
-                        <label for="exampleInputEmail1" class="text-uppercase">Usuario</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <label for="Email" class="text-uppercase">Usuario</label>
+                        <input type="text" name="email" value="" placeholder="Escribir email" class="form-control" required/>
 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
-                        <input type="password" class="form-control" placeholder="">
+                        <label for="Password" class="text-uppercase">Password</label>
+                        <input type="password" name="password" value="" placeholder="Escribir Cotraseña" class="form-control" required/>
                     </div>
 
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                            <small>Recordar usuario</small>
+                            <input type="checkbox" checked="checked" name="remember"> Recordar usuario
                         </label>
-                        <button type="submit" class="btn btn-login float-right">Iniciar sesion</button>
+                        <button type="submit" value="Login" asp-page-handler="Login" class="btn btn-login float-right">Iniciar sesion</button>
                     </div>
 
                 </form>
