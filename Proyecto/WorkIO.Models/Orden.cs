@@ -12,13 +12,19 @@ namespace WorkIO.Models
         public int OrdenID { get; set; }
 
         // Definimos nuestras referencias
-        [Display(Name = "Empresa y Candidato")]
-        [Required(ErrorMessage = "Empresa y Candidato is required.")]
-        [ForeignKey("Empresa y Candidato")]
+        [Display(Name = "Empresa")]
+        [Required(ErrorMessage = "Empresa is required.")]
+        [ForeignKey("Empresa")]
         public int EmpresaID { get; set; }
         public Empresa Empresa { get; set; }
+
+        [Display(Name = "Candidato")]
+        [Required(ErrorMessage = "Candidato is required.")]
+        [ForeignKey("Candidato")]
         public int CandidatoID { get; set; }
         public Candidato Candidato { get; set; }
 
+        //Navegavilidad
+        public ICollection<Usuario> Usuario { get; set; }
     }
 }

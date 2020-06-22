@@ -46,6 +46,7 @@ namespace WorkIO.Models
         public Documentos Documento { get; set; }
         public Orden Orden { get; set; }
         public Referencia Referencia { get; set; }
+        public ICollection<Usuario> Usuario { get; set; }
 
     }
 }

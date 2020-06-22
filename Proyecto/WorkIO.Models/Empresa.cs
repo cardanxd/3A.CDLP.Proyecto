@@ -32,5 +32,6 @@ namespace WorkIO.Models
         // Agregamos la navegabilidad
         public ICollection<Candidato> Candidato { get; set; }
         public ICollection<Orden> Orden { get; set; }
+        public ICollection<Usuario> Usuario { get; set; }
     }
 }
