@@ -15,23 +15,8 @@ namespace WorkIO.Models
         [MinLength(6, ErrorMessage = "Password should at contain 3 character")]
         public string Password { get; set; }
 
-        // Definimos nuestras referencias
-        [Display(Name = "Empresa")]
-        [ForeignKey("Empresa")]
-        public int EmpresaID { get; set; }
-        public Empresa Empresa { get; set; }
-
-        [Display(Name = "Candidato")]
-        [ForeignKey("Candidato")]
-        public int CandidatoID { get; set; }
-        public Candidato Candidato { get; set; }
-
-        [Display(Name = "Orden")]
-        [ForeignKey("Orden")]
-        public int OrdenID { get; set; }
-        public Orden Orden { get; set; }
-
         //Navegavilidad
         public Persona Persona { get; set; }
+        public ICollection<Empresa> Empresas { get; set; }
     }
 }

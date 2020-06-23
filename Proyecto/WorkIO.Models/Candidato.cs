@@ -9,8 +9,7 @@ namespace WorkIO.Models
 {
     public class Candidato: BaseEntity
     {
-        [Display(Name = "Id")]
-        public int CandidatoID { get; set; }
+        
         [Required(ErrorMessage = "Nombre is required.")]
         [Display(Prompt = "Nombre del candidato")]
         public string Nombre { get; set; }
@@ -42,11 +41,11 @@ namespace WorkIO.Models
         public int EmpresaID { get; set; }
         public Empresa Empresa { get; set; }
 
-        // Agregamos la navegabilidad
+        // Agregamos la navegabilidad 
+        public ICollection<Orden> Ordens { get; set; }
         public Documentos Documento { get; set; }
-        public Orden Orden { get; set; }
+
         public Referencia Referencia { get; set; }
-        public ICollection<Usuario> Usuario { get; set; }
 
     }
 }

@@ -8,11 +8,10 @@ namespace WorkIO.Models
 {
     public class Empresa : BaseEntity
     {
-        [Display(Name = "Id")]
-        public int EmpresaID { get; set; }
+        
         [Required(ErrorMessage = "Nombre de la empresa is required")]
         [Display(Prompt = "Nombre de la empresa")]
-        public string NomEmpresa { get; set; }
+        public string Nombre { get; set; }
 
         [Required(ErrorMessage = "Nombre del contacto is required")]
         [Display(Prompt = "Nombre del contacto")]
@@ -28,10 +27,22 @@ namespace WorkIO.Models
 
         [Display(Prompt = "Direccion")]
         public string Direccion { get; set; }
+        
+
+        // Definimos nuestras referencias
+        [Display(Name = "Orden")]
+        [Required(ErrorMessage = "Candidato is required.")]
+        [ForeignKey("Candidato")]
+        public int OrdenID { get; set; }
+        public Orden Orden { get; set; }
+
+        [Display(Name = "Persona")]
+        [ForeignKey("Persona")]
+        public int PersonaID { get; set; }
+
 
         // Agregamos la navegabilidad
-        public ICollection<Candidato> Candidato { get; set; }
-        public ICollection<Orden> Orden { get; set; }
-        public ICollection<Usuario> Usuario { get; set; }
+        public ICollection<Orden> Ordens { get; set; }
+        public ICollection<Usuario> Usuarios { get; set; }
     }
 }

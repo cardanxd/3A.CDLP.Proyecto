@@ -58,39 +58,6 @@ namespace WorkIO.Services
 
         }
 
-        void IRepository<T>.Delete(T obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        T IRepository<T>.Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<T> IRepository<T>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        int IRepository<T>.Insert(T obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        object IRepository<T>.Insert(Candidato candidato)
-        {
-            throw new NotImplementedException();
-        }
-
-        object IRepository<T>.Insert(Documentos documentos)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IRepository<T>.Update(T obj)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

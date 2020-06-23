@@ -14,12 +14,10 @@ namespace Work_IO.Pages.WorkIO
     {
         [BindProperty]
         public Candidato Candidato { get; set; }
-        [BindProperty]
-        public Documentos Documentos { get; set; }
 
         public IWebHostEnvironment HostEnvironment { get; }
 
-        private readonly IRepository<Empresa> repository;
+        private readonly IRepository<Candidato> repository;
 
         public RegisterCandidatoModel(IRepository<Candidato> repository, IWebHostEnvironment hostEnvironment)
         {
