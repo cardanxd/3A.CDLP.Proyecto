@@ -42,7 +42,6 @@ namespace WorkIO.Models
 
 
         // Agregamos la navegabilidad
-        public ICollection<Orden> Ordens { get; set; }
-        public ICollection<Usuario> Usuarios { get; set; }
+        public Orden Ordens { get; set; }
     }
 }

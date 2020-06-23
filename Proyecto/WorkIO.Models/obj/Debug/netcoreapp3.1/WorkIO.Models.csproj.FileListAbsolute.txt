@@ -9,3 +9,4 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3
 D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.dll
 D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.pdb
 D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.genruntimeconfig.cache
+D:\carlo\Documents\Aplicaciones web\Proyecto\WorkIO.Models\obj\Debug\netcoreapp3.1\WorkIO.Models.csprojAssemblyReference.cache

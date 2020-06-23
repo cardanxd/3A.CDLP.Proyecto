@@ -13,10 +13,8 @@ namespace WorkIO.Models
         [Display(Prompt = "Nombre del documento")]
         public string NombreDocumento { get; set; }
 
-        // Definimos nuestras referencias
-        [Display(Name = "Candidato")]
-        [Required(ErrorMessage = "Candidato is required.")]
-        [ForeignKey("Candidato")]
-        public int CandidatoID { get; set; }
+
+        // Agregamos la navegabilidad 
+        public Candidato Candidato { get; set; }
     }
 }

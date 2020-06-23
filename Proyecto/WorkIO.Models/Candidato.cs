@@ -35,17 +35,20 @@ namespace WorkIO.Models
         public string Nacionalidad { get; set; }
 
         // Definimos nuestras referencias
-        [Display(Name = "Empresa")]
-        [Required(ErrorMessage = "Empresa is required.")]
-        [ForeignKey("Empresa")]
-        public int EmpresaID { get; set; }
-        public Empresa Empresa { get; set; }
-
-        // Agregamos la navegabilidad 
-        public ICollection<Orden> Ordens { get; set; }
+        [Display(Name = "Documento")]
+        [Required(ErrorMessage = "Documento is required.")]
+        [ForeignKey("Documento")]
+        public int DocumentoID { get; set; }
         public Documentos Documento { get; set; }
 
+        [Display(Name = "Referencia")]
+        [Required(ErrorMessage = "Referencia is required.")]
+        [ForeignKey("Referencia")]
+        public int ReferenciaID { get; set; }
         public Referencia Referencia { get; set; }
+
+        // Agregamos la navegabilidad 
+        public Orden Orden { get; set; }
 
     }
 }

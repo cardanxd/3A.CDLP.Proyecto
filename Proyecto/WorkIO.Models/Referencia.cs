@@ -40,10 +40,7 @@ namespace WorkIO.Models
         [Display(Prompt = "Funcion del puesto")]
         public string Funcion { get; set; }
 
-        // Definimos nuestras referencias
-        [Display(Name = "Candidato")]
-        [Required(ErrorMessage = "Candidato is required.")]
-        [ForeignKey("Candidato")]
-        public int CandidatoID { get; set; }
+        // Agregamos la navegabilidad 
+        public Candidato Candidato { get; set; }
     }
 }
