@@ -41,7 +41,6 @@ namespace WorkIO.Models
         public int PersonaID { get; set; }
 
 
-        // Agregamos la navegabilidad
-        public Orden Ordens { get; set; }
+        
     }
 }
