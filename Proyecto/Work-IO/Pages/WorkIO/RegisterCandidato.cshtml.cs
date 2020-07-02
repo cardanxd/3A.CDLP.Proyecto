@@ -14,7 +14,6 @@ namespace Work_IO.Pages.WorkIO
     {
         [BindProperty]
         public Candidato Candidato { get; set; }
-
         public IWebHostEnvironment HostEnvironment { get; }
 
         private readonly IRepository<Candidato> repository;

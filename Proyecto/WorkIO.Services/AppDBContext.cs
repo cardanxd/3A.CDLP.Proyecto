@@ -12,7 +12,7 @@ namespace WorkIO.Services
         {
 
         }
-        public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
         public DbSet<Documentos> Documentos { get; set; }
         public DbSet<Referencia> Referencias { get; set; }

@@ -27,20 +27,9 @@ namespace WorkIO.Models
 
         [Display(Prompt = "Direccion")]
         public string Direccion { get; set; }
-        
-
-        // Definimos nuestras referencias
-        [Display(Name = "Orden")]
-        [Required(ErrorMessage = "Candidato is required.")]
-        [ForeignKey("Candidato")]
-        public int OrdenID { get; set; }
-        public Orden Orden { get; set; }
-
-        [Display(Name = "Persona")]
-        [ForeignKey("Persona")]
-        public int PersonaID { get; set; }
 
 
-        
+        public ICollection<Orden> Ordens { get; set; }
+
     }
 }

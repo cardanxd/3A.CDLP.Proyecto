@@ -11,10 +11,9 @@ namespace WorkIO.Models
 
         [Required(ErrorMessage = "Nombre is required.")]
         [Display(Prompt = "Nombre del documento")]
-        public string NombreDocumento { get; set; }
-
-
-        // Agregamos la navegabilidad 
+        public string Nombre { get; set; }
+ 
+        public int CandidatoID { get; set; }
         public Candidato Candidato { get; set; }
     }
 }

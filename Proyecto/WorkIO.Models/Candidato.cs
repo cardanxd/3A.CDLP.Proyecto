@@ -14,17 +14,15 @@ namespace WorkIO.Models
         [Display(Prompt = "Nombre del candidato")]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "Sexo is required.")]
         [Display(Name = "Sexo", Prompt = "Escoga una opcion")]
         public string Sexo { get; set; }
 
         [Display(Prompt = "Fecha de nacimiento")]
-        public string FNacimiento { get; set; }
+        public DateTime? FNacimiento { get; set; }
 
         [Display(Prompt = "Lugar de nacimiento")]
+        
         public string LNacimiento { get; set; }
-
-        [Required(ErrorMessage = "Edad is required.")]
         [Display(Prompt = "Edad")]
         public int Edad { get; set; }
 
@@ -34,20 +32,13 @@ namespace WorkIO.Models
         [Display(Prompt = "Nacionalidad")]
         public string Nacionalidad { get; set; }
 
-        // Definimos nuestras referencias
-        [Display(Name = "Documento")]
-        [Required(ErrorMessage = "Documento is required.")]
-        [ForeignKey("Documento")]
-        public int DocumentoID { get; set; }
-        public Documentos Documento { get; set; }
 
-        [Display(Name = "Referencia")]
-        [Required(ErrorMessage = "Referencia is required.")]
-        [ForeignKey("Referencia")]
-        public int ReferenciaID { get; set; }
-        public Referencia Referencia { get; set; }
+        public ICollection<Documentos> Documentos { get; set; }
 
-        // Agregamos la navegabilidad 
+        public ICollection<Referencia> Referencias { get; set; }
+
+        
+        public int OrdenID { get; set; }
         public Orden Orden { get; set; }
 
     }

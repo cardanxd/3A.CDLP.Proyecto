@@ -41,6 +41,7 @@ namespace WorkIO.Models
         public string Funcion { get; set; }
 
         // Agregamos la navegabilidad 
+        public int CandidatoID { get; set; }
         public Candidato Candidato { get; set; }
     }
 }

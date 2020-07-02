@@ -14,58 +14,48 @@
             <div class="col-md-12">
 
                 <div class="form-group col-lg-12">
-                    <label for="empresa">Nombre de la empresa:</label>
-                    <select name="empresas" id="empresas" class="form-control">
-                        <option value="">--</option>
-                        <option value="">Aquí van las empresas registradas</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-lg-12">
-                    <label asp-for="Candidato.Nombre">Nombre completo</label>
-                    <input type="text" asp-for="Candidato.Nombre" class="form-control form-text" placeholder="Nombre completo">
+                    <label asp-for="Candidato.Nombre">Nombre del candidato</label>
+                    <input type="text" asp-for="Candidato.Nombre" class="form-control form-text" placeholder="">
                     <span class="text-danger" asp-validation-for="Candidato.Nombre"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label asp-for="Candidato.Sexo">Sexo</label>
-                    <select name="sexo" id="sexo" class="form-control" asp-for="Candidato.Sexo">
-                        <option>--</option>
+                    <select type="text" class="form-control" asp-for="Candidato.Sexo">
                         <option value="masculino">MASCULINO</option>
                         <option value="femenino">FEMENINO</option>
                     </select>
-                    <span class="text-danger" asp-validation-for="Candidato.Sexo"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label asp-for="Candidato.Edad">Edad</label>
                     <input type="text" asp-for="Candidato.Edad" class="form-control form-text" placeholder="Edad">
-                    <span class="text-danger" asp-validation-for="Candidato.Edad"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label asp-for="Candidato.FNacimiento">Birthday:</label>
-                    <input type="date" asp-for="Candidato.FNacimiento" id="birthday" class="form-control" name="birthday">
+                    <input type="date" asp-for="Candidato.FNacimiento" class="form-control">
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label asp-for="Candidato.LNacimiento">Edad</label>
+                    <label asp-for="Candidato.LNacimiento">Lugar de nacimiento</label>
                     <input type="text" asp-for="Candidato.LNacimiento" class="form-control form-text" placeholder="Lugar de nacimiento">
-                    <span class="text-danger" asp-validation-for="Candidato.LNacimiento"></span>
                 </div>
 
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-6">
                     <label asp-for="Candidato.Nacionalidad">Nacionalidad</label>
                     <input type="text" asp-for="Candidato.Nacionalidad" class="form-control form-text" placeholder="Nacionalidad">
+                </div>
 
+                <div class="form-group col-lg-6">
+                    <label asp-for="Candidato.ECivil">Estado Civil</label>
+                    <input type="text" asp-for="Candidato.ECivil" class="form-control form-text" placeholder="Estado Civil">
                 </div>
 
                 <div class="col-xs-12 col-md-6"><button type="submit" value="" class="btn btn-success btn-block btn-lg">Registrar</button></div>
                 <div class="col-xs-12 col-md-6"><a asp-page="/Index" class="btn btn-primary btn-block btn-lg">Cancelar</a></div>
 
             </div>
-
-            
         </div>
     </form>
 </div>
