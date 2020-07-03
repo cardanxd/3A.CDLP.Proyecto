@@ -153,3 +153,4 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Wor
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Work-IO.pdb
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Work-IO.genruntimeconfig.cache
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\Index.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EmpresasRegistradas.cshtml.g.cs

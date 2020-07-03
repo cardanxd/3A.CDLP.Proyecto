@@ -1,0 +1,39 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.EmpresasRegistradasModel
+@{
+    ViewData["Title"] = "EmpresasRegistradas";
+}
+
+<h1>Empresas</h1>
+@if (Model.Empresas.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Nombre)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Email)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NomContacto)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NumContacto)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Empresas)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <td>@Html.DisplayFor(m => item.Email)</td>
+                    <td>@Html.DisplayFor(m => item.NomContacto)</td>
+                    <td>@Html.DisplayFor(m => item.NumContacto)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center border">
+        <p class="text-danger">No hay empresas registradas.</p>
+    </div>
+}
