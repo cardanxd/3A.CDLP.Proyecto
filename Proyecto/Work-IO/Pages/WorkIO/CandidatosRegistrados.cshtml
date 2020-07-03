@@ -1,0 +1,42 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.CandidatosRegistradosModel
+@{
+    ViewData["Title"] = "CandidatosRegistrados";
+}
+
+<h1>Candidatos</h1>
+@if (Model.Candidatos.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().OrdenID)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nombre)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Edad)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Sexo)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nacionalidad)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Candidatos)
+            {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                <td>@Html.DisplayFor(m => item.OrdenID)</td>
+                <td>@Html.DisplayFor(m => item.Nombre)</td>
+                <td>@Html.DisplayFor(m => item.Edad)</td>
+                <td>@Html.DisplayFor(m => item.Sexo)</td>
+                <td>@Html.DisplayFor(m => item.Nacionalidad)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+<div class="text-center border">
+    <p class="text-danger">No hay candidatos registrados.</p>
+    <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+</div>
+}

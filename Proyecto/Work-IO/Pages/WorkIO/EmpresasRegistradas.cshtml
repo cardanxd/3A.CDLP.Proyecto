@@ -11,29 +11,34 @@
             <tr>
                 <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Id)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Nombre)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Email)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NomContacto)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NumContacto)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Email)</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Empresas)
             {
-                <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                    <td>@Html.DisplayFor(m => item.Nombre)</td>
-                    <td>@Html.DisplayFor(m => item.Email)</td>
-                    <td>@Html.DisplayFor(m => item.NomContacto)</td>
-                    <td>@Html.DisplayFor(m => item.NumContacto)</td>
-                </tr>
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                <td>@Html.DisplayFor(m => item.Nombre)</td>
+                <td>@Html.DisplayFor(m => item.NomContacto)</td>
+                <td>@Html.DisplayFor(m => item.NumContacto)</td>
+                <td>@Html.DisplayFor(m => item.Email)</td>
+            </tr>
             }
         </tbody>
     </table>
+ <div class="row">
+     <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/Index" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
+     <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/RegisterCandidato" class="btn btn-primary btn-block btn-lg">Registrar</a></div>
+ </div>
 }
 else
 {
     <div class="text-center border">
         <p class="text-danger">No hay empresas registradas.</p>
+        <a href="/WorkIO/RegisterEmpresa" title="Registro empresa" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
     </div>
 }

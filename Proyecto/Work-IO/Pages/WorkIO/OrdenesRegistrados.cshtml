@@ -1,0 +1,42 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.OrdenesRegistradosModel
+@{
+    ViewData["Title"] = "OrdenesRegistrados";
+}
+
+<h1>OrdenesRegistrados</h1>
+@if (Model.Ordenes.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Nombre)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().EmpresaID)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().TipoContrato)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().FechaLimite)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Descripcion)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Ordenes)
+            {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                <td>@Html.DisplayFor(m => item.Nombre)</td>
+                <td>@Html.DisplayFor(m => item.EmpresaID)</td>
+                <td>@Html.DisplayFor(m => item.TipoContrato)</td>
+                <td>@Html.DisplayFor(m => item.FechaLimite)</td>
+                <td>@Html.DisplayFor(m => item.Descripcion)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center border">
+        <p class="text-danger">No hay ordenes registrados.</p>
+        <a href="/WorkIO/RegisterOrden" title="Registro de ordenes" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+    </div>
+}

@@ -5,23 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WorkIO.Models;
 using WorkIO.Services;
 
-namespace Work_IO.Pages
+namespace Work_IO.Pages.WorkIO
 {
-    public class RegisterEmpresaModel : PageModel
+    public class RegisterOrdenModel : PageModel
     {
         [BindProperty]
-        public Empresa Empresa { get; set; }
+        public Orden Orden { get; set; }
         public IWebHostEnvironment HostEnvironment { get; }
 
-        private readonly IRepository<Empresa> repository;
+        private readonly IRepository<Orden> repository;
 
-        public RegisterEmpresaModel(IRepository<Empresa> repository, IWebHostEnvironment hostEnvironment)
+        private readonly IRepository<Empresa> repositoryEmpresa;
+        public IEnumerable<Empresa> EmpresaList { get; set; }
+
+        public RegisterOrdenModel(IRepository<Orden> repository, IRepository<Empresa> repositoryEmpresa, IWebHostEnvironment hostEnvironment)
         {
             this.repository = repository;
+            this.EmpresaList = repositoryEmpresa.GetAll();
             HostEnvironment = hostEnvironment;
         }
 
@@ -35,7 +38,7 @@ namespace Work_IO.Pages
             if (!ModelState.IsValid)
                 return Page();
 
-            var id = repository.Insert(Empresa);
+            var id = repository.Insert(Orden);
 
             return RedirectToPage("/WorkIO/Index");
         }

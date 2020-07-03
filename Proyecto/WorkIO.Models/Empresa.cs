@@ -10,11 +10,11 @@ namespace WorkIO.Models
     {
         
         [Required(ErrorMessage = "Nombre de la empresa is required")]
-        [Display(Prompt = "Nombre de la empresa")]
+        [Display(Name = "Nombre de la empresa")]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "Nombre del contacto is required")]
-        [Display(Prompt = "Nombre del contacto")]
+        [Display(Name = "Nombre del contacto")]
         public string NomContacto { get; set; }
 
         [Required(ErrorMessage = "Numero del contacto is required")]
@@ -22,10 +22,10 @@ namespace WorkIO.Models
         public string NumContacto { get; set; }
 
         [Required(ErrorMessage = "Email is required")]
-        [Display(Prompt = "Email")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Display(Prompt = "Direccion")]
+        [Display(Name = "Direccion")]
         public string Direccion { get; set; }
 
 

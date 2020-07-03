@@ -15,13 +15,18 @@ namespace Work_IO.Pages.WorkIO
     {
         [BindProperty]
         public Candidato Candidato { get; set; }
+
+        private readonly IRepository<Orden> repositoryOrden;
+        public IEnumerable<Orden> OrdenList { get; set; }
+
         public IWebHostEnvironment HostEnvironment { get; }
 
         private readonly IRepository<Candidato> repository;
 
-        public RegisterCandidatoModel(IRepository<Candidato> repository, IWebHostEnvironment hostEnvironment)
+        public RegisterCandidatoModel(IRepository<Candidato> repository, IRepository<Orden> repositoryOrden, IWebHostEnvironment hostEnvironment)
         {
             this.repository = repository;
+            this.OrdenList = repositoryOrden.GetAll();
             HostEnvironment = hostEnvironment;
         }
 

@@ -11,25 +11,25 @@ namespace WorkIO.Models
     {
         
         [Required(ErrorMessage = "Nombre is required.")]
-        [Display(Prompt = "Nombre del candidato")]
+        [Display(Name = "Nombre del candidato")]
         public string Nombre { get; set; }
 
         [Display(Name = "Sexo", Prompt = "Escoga una opcion")]
         public string Sexo { get; set; }
 
-        [Display(Prompt = "Fecha de nacimiento")]
+        [Display(Name = "Fecha de nacimiento")]
         public DateTime? FNacimiento { get; set; }
 
-        [Display(Prompt = "Lugar de nacimiento")]
-        
+        [Display(Name = "Lugar de nacimiento")]
         public string LNacimiento { get; set; }
-        [Display(Prompt = "Edad")]
+
+        [Display(Name = "Edad")]
         public int Edad { get; set; }
 
-        [Display(Prompt = "Estado civil")]
+        [Display(Name = "Estado civil")]
         public string ECivil { get; set; }
 
-        [Display(Prompt = "Nacionalidad")]
+        [Display(Name = "Nacionalidad")]
         public string Nacionalidad { get; set; }
 
 

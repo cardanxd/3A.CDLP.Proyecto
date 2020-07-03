@@ -1,0 +1,17 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.TestModel
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+<form method="post">
+
+    <select asp-for="id"
+            asp-items="@(new SelectList(Model.EmpresaList,"Id","Nombre"))">
+        <option>Please select one</option>
+    </select>
+
+    <input type="submit"/>
+
+</form>
