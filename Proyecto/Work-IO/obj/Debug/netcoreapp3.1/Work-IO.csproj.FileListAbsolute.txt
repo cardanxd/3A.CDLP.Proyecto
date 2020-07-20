@@ -158,3 +158,4 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Raz
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\RegisterOrden.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\Test.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\OrdenesRegistrados.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\FiltroCandidatos.cshtml.g.cs

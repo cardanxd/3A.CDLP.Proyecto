@@ -1,0 +1,33 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.FiltroCandidatosModel
+@{
+    ViewData["Title"] = "FiltroCandidatos";
+}
+
+<h1>FiltroCandidatos</h1>
+@if (Model.Ordenes.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Candidatos)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Ordenes)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.Candidatos)</th>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center border">
+        <p class="text-danger">No hay candidatos registrados.</p>
+        <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+    </div>
+}
