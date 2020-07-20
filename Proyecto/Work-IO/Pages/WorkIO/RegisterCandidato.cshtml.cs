@@ -41,7 +41,7 @@ namespace Work_IO.Pages.WorkIO
                 return Page();
             var id = repository.Insert(Candidato);
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/WorkIO/Index");
         }
     }
 }

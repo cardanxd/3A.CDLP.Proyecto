@@ -9,93 +9,109 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <div class="container-fluid">
-    <section class="container">
-        <div class="container-page">
+    <section class="">
+        <form method="post" enctype="multipart/form-data">
             <h3 class="dark-grey">Agregar Referencias</h3>
             <div class="col-md-6">
 
-                <div class="form-group col-lg-6">
-                    <label for="empresa">Nombre de la empresa:</label>
-                    <input type="text" name="NameEmpresa" class="form-control" id="" value="">
+                <div class="form-group col-lg-12">
+                    <label asp-for="Referencia.CandidatoID">Candidato:</label>
+                    <select asp-for="Referencia.CandidatoID" asp-items="@(new SelectList(Model.CandidatoList,"Id","Nombre"))">
+                        <option>Seleccione el candidato</option>
+                    </select>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label>Telefono</label>
-                    <input type="tel" name="Telefono" class="form-control" id="" value="">
+                    <label asp-for="Referencia.NomEmpresa">Nombre de la empresa:</label>
+                    <input type="text" asp-for="Referencia.NomEmpresa" class="form-control form-text" placeholder="Nombre de la empresa">
+                    <span class="text-danger" asp-validation-for="Referencia.NomEmpresa"></span>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label asp-for="Referencia.Telefono">Telefono:</label>
+                    <input type="text" asp-for="Referencia.Telefono" class="form-control form-text" placeholder="Telefono">
+                    <span class="text-danger" asp-validation-for="Referencia.Telefono"></span>
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label for="direccion">Direccion</label>
-                    <input type="text" name="Direccion" class="form-control" id="" value="">
+                    <label asp-for="Referencia.Direccion">Direccion:</label>
+                    <input type="text" asp-for="Referencia.Direccion" class="form-control form-text" placeholder="Direccion">
+                    <span class="text-danger" asp-validation-for="Referencia.Direccion"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="nameInformante">Nombre del informante</label>
-                    <input type="text" name="NameInformante" class="form-control" id="" value="">
+                    <label asp-for="Referencia.NomInformante">Nombre del informante:</label>
+                    <input type="text" asp-for="Referencia.NomInformante" class="form-control form-text" placeholder="Nombre del informante">
+                    <span class="text-danger" asp-validation-for="Referencia.NomInformante"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="nameJefe">Nombre del Jefe</label>
-                    <input type="text" id="nameJefe" class="form-control" name="nameJefe">
+                    <label asp-for="Referencia.NomJefe">Nombre del jefe:</label>
+                    <input type="text" asp-for="Referencia.NomJefe" class="form-control form-text" placeholder="Nombre del jefe">
+                    <span class="text-danger" asp-validation-for="Referencia.NomJefe"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="puestoInformante">Puesto del informante</label>
-                    <input type="text" name="puestoInformante" class="form-control" id="" value="">
+                    <label asp-for="Referencia.PuestoInformante">Puesto del informante:</label>
+                    <input type="text" asp-for="Referencia.PuestoInformante" class="form-control form-text" placeholder="Puesto del informante">
+                    <span class="text-danger" asp-validation-for="Referencia.PuestoInformante"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="puestoJefe">Puesto del jefe</label>
-                    <input type="text" name="puestoJefe" class="form-control" id="" value="">
+                    <label asp-for="Referencia.PuestoJefe">Puesto del jefe:</label>
+                    <input type="text" asp-for="Referencia.PuestoJefe" class="form-control form-text" placeholder="Puesto del jefe">
+                    <span class="text-danger" asp-validation-for="Referencia.PuestoJefe"></span>
                 </div>
-
-                <div class="form-group col-lg-6">
-                    <label for="puestoCandidato">Puesto del candidato</label>
-                    <input type="text" name="nacionalidad" class="form-control" id="" value="">
-                </div>
-
-                <div class="form-group col-lg-6">
-                    <label for="sueldo">Sueldo Mensual</label>
-                    <input type="text" name="sueldo" class="form-control" id="" value="">
-                </div>
-
 
             </div>
 
             <div class="col-md-6">
 
-                
-
                 <div class="form-group col-lg-6">
-                    <label>Inicio de labores:</label>
-                    <input type="date" id="inicioLabores" class="form-control" name="">
+                    <label asp-for="Referencia.PuestoCandidato">Puesto del candidato:</label>
+                    <input type="text" asp-for="Referencia.PuestoCandidato" class="form-control form-text" placeholder="Puesto del candidato">
+                    <span class="text-danger" asp-validation-for="Referencia.PuestoCandidato"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label>Fin de labores:</label>
-                    <input type="date" id="finLabores" class="form-control" name="">
+                    <label asp-for="Referencia.SueldoMensual">Sueldo mensual:</label>
+                    <input type="text" asp-for="Referencia.SueldoMensual" class="form-control form-text" placeholder="Sueldo mensual">
+                    <span class="text-danger" asp-validation-for="Referencia.SueldoMensual"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="tipoContrato">Tipo de contrato</label>
-                    <input type="text" name="tipoContrato" class="form-control" id="" value="">
+                    <label asp-for="Referencia.InicioLabores">Inicio de labores:</label>
+                    <input type="date" asp-for="Referencia.InicioLabores" class="form-control form-text" placeholder="Inicio de labores">
+                    <span class="text-danger" asp-validation-for="Referencia.InicioLabores"></span>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="funcion">Funciones del puesto</label>
-                    <input type="text" name="funciones" class="form-control" id="" value="">
+                    <label asp-for="Referencia.FinLabores">Fin de labores:</label>
+                    <input type="date" asp-for="Referencia.FinLabores" class="form-control form-text" placeholder="Fin de labores">
+                    <span class="text-danger" asp-validation-for="Referencia.FinLabores"></span>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label asp-for="Referencia.Contrato">Tipo de contrato:</label>
+                    <input type="text" asp-for="Referencia.Contrato" class="form-control form-text" placeholder="Tipo de contrato">
+                    <span class="text-danger" asp-validation-for="Referencia.Contrato"></span>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label asp-for="Referencia.Funcion">Funciones del puesto:</label>
+                    <input type="text" asp-for="Referencia.Funcion" class="form-control form-text" placeholder="Funciones del puesto">
+                    <span class="text-danger" asp-validation-for="Referencia.Funcion"></span>
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label class="control-label col-sm-12" for="motivos">Motivos de separacion:</label>
+                    <label asp-for="Referencia.Motivo">Motivos de separacion:</label>
                     <div class="col-sm-12">
-                        <textarea class="form-control" rows="5" id="motivos"></textarea>
+                        <input type="text" asp-for="Referencia.Motivo" class="form-control form-text" placeholder="">
                     </div>
                 </div>
-
-                <div class="col-xs-12 col-md-6"><input type="submit" value="Cancelar" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-                <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Registrar</a></div>
+                <div class="col-xs-12 col-md-6"><button type="submit" value="" class="btn btn-success btn-block btn-lg">Registrar</button></div>
+                <div class="col-xs-12 col-md-6"><a asp-page="/WorkIO/Index" class="btn btn-primary btn-block btn-lg">Cancelar</a></div>
             </div>
-        </div>
+           </form>
     </section>
 </div>

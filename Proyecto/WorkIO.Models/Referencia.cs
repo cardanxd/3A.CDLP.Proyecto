@@ -27,11 +27,11 @@ namespace WorkIO.Models
         [Display(Prompt = "Puesto del candidato")]
         public string PuestoCandidato { get; set; }
         [Display(Name = "Sueldo mensual", Prompt = "Valores reales")]
-        public int SueldoMensual { get; set; }
+        public string SueldoMensual { get; set; }
         [Display(Prompt = "Inicio de labores")]
-        public string InicioLabores { get; set; }
+        public DateTime? InicioLabores { get; set; }
         [Display(Prompt = "Fin de labores")]
-        public string FinLabores{ get; set; }
+        public DateTime? FinLabores{ get; set; }
         [Required(ErrorMessage = "Motivos is required")]
         [Display(Prompt = "Motivos")]
         public string Motivo { get; set; }
