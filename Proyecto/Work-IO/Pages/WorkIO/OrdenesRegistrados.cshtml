@@ -4,7 +4,7 @@
     ViewData["Title"] = "OrdenesRegistrados";
 }
 
-<h1>OrdenesRegistrados</h1>
+<h1>Ordenes</h1>
 @if (Model.Ordenes.Any())
 {<table class="table table-striped">
         <thead>
@@ -21,15 +21,23 @@
         <tbody>
             @foreach (var item in Model.Ordenes)
             {
-                <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                    <td>@Html.DisplayFor(m => item.Nombre)</td>
-                    <td>@Html.DisplayFor(m => item.EmpresaID)</td>
-                    <td>@Html.DisplayFor(m => item.TipoContrato)</td>
-                    <td>@Html.DisplayFor(m => item.FechaLimite)</td>
-                    <td>@Html.DisplayFor(m => item.Descripcion)</td>
-                    <td><a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="btn btn-info m-1">View</a></td>
-                </tr>
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                <td>@Html.DisplayFor(m => item.Nombre)</td>
+                <td>@Html.DisplayFor(m => item.EmpresaID)</td>
+                <td>@Html.DisplayFor(m => item.TipoContrato)</td>
+                <td>@Html.DisplayFor(m => item.FechaLimite)</td>
+                <td>@Html.DisplayFor(m => item.Descripcion)</td>
+                <td>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                        <div class="dropdown-menu">
+                            <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                            <a asp-page="/WorkIO/RegisterCandidato" class="dropdown-item">Agregar Candidato</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

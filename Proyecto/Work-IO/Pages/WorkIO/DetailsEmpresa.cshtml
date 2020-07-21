@@ -1,0 +1,38 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.DetailsEmpresaModel
+@{
+    ViewData["Title"] = "DetailsEmpresa";
+}
+
+<h1>DetailsEmpresa</h1>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Empresa.Nombre"></label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Empresa.Nombre</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Empresa.NomContacto"></label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Empresa.NomContacto</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Empresa.NumContacto"></label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Empresa.NumContacto</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Empresa.Email"></label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Empresa.Email</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Empresa.Direccion"></label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Empresa.Direccion</label>
+    </div>
+    <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-secondary btn-block btn-lg">Regresar</a>
+</div>
