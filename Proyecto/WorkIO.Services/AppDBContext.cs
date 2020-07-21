@@ -19,7 +19,6 @@ namespace WorkIO.Services
         public DbSet<Orden> Ordens { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Persona> Persona { get; set; }
-
-
+        public object Ordenes { get; set; }
     }
 }

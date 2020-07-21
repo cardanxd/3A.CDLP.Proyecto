@@ -1,0 +1,23 @@
+﻿@page
+@model Work_IO.Pages.NotFoundModel
+@{
+    ViewData["Title"] = "NotFound";
+}
+
+<h1>NotFound</h1>
+<div class="row m-2">
+    <div class="col-md-6 my-auto">
+        <h1 class="text-dark">Not Found</h1>
+        <p class="text-danger align-middle">
+            Sorry, the resource you are looking for cannot be
+            found...
+        </p>
+    </div>
+    <div class="col-md-6">
+        <img src="~/images/NotFound.404.jpg" alt="NotFound" asp-append-version="true"
+             style="width:450px; height:auto" />
+    </div>
+</div>
+<div class="d-flex justify-content-center mb-3">
+    <a asp-page="/Index" class="btn btn-primary">Click here to get back home...</a>
+</div>

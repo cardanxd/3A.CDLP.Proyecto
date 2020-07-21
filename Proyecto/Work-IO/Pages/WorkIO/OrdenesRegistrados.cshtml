@@ -21,17 +21,22 @@
         <tbody>
             @foreach (var item in Model.Ordenes)
             {
-            <tr>
-                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                <td>@Html.DisplayFor(m => item.Nombre)</td>
-                <td>@Html.DisplayFor(m => item.EmpresaID)</td>
-                <td>@Html.DisplayFor(m => item.TipoContrato)</td>
-                <td>@Html.DisplayFor(m => item.FechaLimite)</td>
-                <td>@Html.DisplayFor(m => item.Descripcion)</td>
-            </tr>
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <td>@Html.DisplayFor(m => item.EmpresaID)</td>
+                    <td>@Html.DisplayFor(m => item.TipoContrato)</td>
+                    <td>@Html.DisplayFor(m => item.FechaLimite)</td>
+                    <td>@Html.DisplayFor(m => item.Descripcion)</td>
+                    <td><a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="btn btn-info m-1">View</a></td>
+                </tr>
             }
         </tbody>
     </table>
+    <div class="row">
+        <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/Index" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
+        <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/RegisterOrden" class="btn btn-primary btn-block btn-lg">Registrar</a></div>
+    </div>
 }
 else
 {

@@ -11,7 +11,7 @@ using WorkIO.Services;
 namespace Work_IO.Pages.WorkIO
 {
     public class OrdenesRegistradosModel : PageModel
-    {
+    { 
         public IEnumerable<Orden> Ordenes { get; set; }
         public IWebHostEnvironment HostEnvironment { get; }
 
@@ -22,6 +22,7 @@ namespace Work_IO.Pages.WorkIO
             this.repository = repository;
             HostEnvironment = hostEnvironment;
         }
+
         public void OnGet()
         {
             Ordenes = repository.GetAll();
