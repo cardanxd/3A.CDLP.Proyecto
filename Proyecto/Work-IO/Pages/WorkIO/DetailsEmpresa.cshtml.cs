@@ -13,10 +13,13 @@ namespace Work_IO.Pages.WorkIO
     {
         private readonly IRepository<Empresa> repository;
         public Empresa Empresa { get; private set; }
+        private readonly IRepository<Orden> repositoryOrden;
+        public IEnumerable<Orden> OrdenList { get; set; }
 
-        public DetailsEmpresaModel(IRepository<Empresa> repository)
+        public DetailsEmpresaModel(IRepository<Empresa> repository, IRepository<Orden> repositoryOrden)
         {
             this.repository = repository;
+            this.OrdenList = repositoryOrden.GetAll();
         }
         public IActionResult OnGet(int id)
         {

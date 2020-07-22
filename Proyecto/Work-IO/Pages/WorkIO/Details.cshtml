@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalles de la Orden</h1>
+<h1>Detalles de la Orden @Model.Orden.Id</h1>
 
 <div class="form-group row">
     <label class="col-form-label col-sm-2" asp-for="Orden.Id"></label>
@@ -40,6 +40,8 @@
         <label class="form-control form-text" role="textbox">@Model.Orden.FechaLimite</label>
     </div>
 </div>
+
+<h1>Empresa</h1>
 @if (Model.EmpresaList.Any())
 {
     <table class="table table-striped">
@@ -83,4 +85,51 @@ else
         <a href="/WorkIO/RegisterEmpresa" title="Registro empresa" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
     </div>
 }
+<h1>Candidatos</h1>
+@if (Model.CandidatosList.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().OrdenID)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().Nombre)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().Edad)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().Sexo)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.CandidatosList.FirstOrDefault().Nacionalidad)</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CandidatosList)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                    <td>@Html.DisplayFor(m => item.OrdenID)</td>
+                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <td>@Html.DisplayFor(m => item.Edad)</td>
+                    <td>@Html.DisplayFor(m => item.Sexo)</td>
+                    <td>@Html.DisplayFor(m => item.Nacionalidad)</td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                            <div class="dropdown-menu">
+                                <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                                <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center border">
+        <p class="text-danger">No hay candidatos registrados.</p>
+        <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+    </div>
+}
+
 <a asp-page="/WorkIO/OrdenesRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a>

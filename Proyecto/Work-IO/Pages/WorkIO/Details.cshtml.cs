@@ -15,10 +15,15 @@ namespace Work_IO.Pages.WorkIO
         public Orden Orden { get; private set; }
         private readonly IRepository<Empresa> repositoryEmpresa;
         public IEnumerable<Empresa> EmpresaList { get; set; }
-        public DetailsModel(IRepository<Orden> repository, IRepository<Empresa> repositoryEmpresa)
+        //public Empresa EmpresaList { get; set; }
+        private readonly IRepository<Candidato> repositoryCandidato;
+        public IEnumerable<Candidato> CandidatosList { get; set; }
+        public DetailsModel(IRepository<Orden> repository, IRepository<Empresa> repositoryEmpresa, IRepository<Candidato> repositoryCandidato)
         {
             this.repository = repository;
             this.EmpresaList = repositoryEmpresa.GetAll();
+            this.CandidatosList = repositoryCandidato.GetAll();
+            //this.EmpresaList = repositoryEmpresa.Get(Orden.EmpresaID);
         }
         public IActionResult OnGet(int id)
         {
