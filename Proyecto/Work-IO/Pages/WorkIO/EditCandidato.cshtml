@@ -1,0 +1,71 @@
+﻿@page "{id:int?}"
+@model Work_IO.Pages.WorkIO.EditCandidatoModel
+@{
+    ViewData["Title"] = "EditCandidato";
+}
+
+<h1>Edit Empresa - @Model.Candidato.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Candidato.Id" type="hidden" />
+    <div class="col-md-12">
+        
+            <div class="form-group col-lg-12">
+                <label asp-for="Candidato.OrdenID">Orden:</label>
+                <select asp-for="Candidato.OrdenID" asp-items="@(new SelectList(Model.OrdenList,"Id","Nombre"))">
+                    <option>Seleccione la orden</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label asp-for="Candidato.Nombre"></label>
+                <input asp-for="Candidato.Nombre" class="form-control form-text" />
+                <span asp-validation-for="Candidato.Nombre"></span>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.Sexo">Sexo</label>
+                <select asp-for="Candidato.Sexo">
+                    <option value="masculino">MASCULINO</option>
+                    <option value="femenino">FEMENINO</option>
+                </select>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.Edad">Edad</label>
+                <input type="text" asp-for="Candidato.Edad" class="form-control form-text">
+            </div>
+        
+
+        
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.FNacimiento">Birthday:</label>
+                <input type="date" asp-for="Candidato.FNacimiento" class="form-control">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.LNacimiento">Lugar de nacimiento</label>
+                <input type="text" asp-for="Candidato.LNacimiento" class="form-control form-text">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.Nacionalidad">Nacionalidad</label>
+                <input type="text" asp-for="Candidato.Nacionalidad" class="form-control form-text">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label asp-for="Candidato.ECivil">Estado Civil</label>
+                <input type="text" asp-for="Candidato.ECivil" class="form-control form-text">
+            </div>
+        
+
+    </div>
+
+    <div class="col-xs-6 col-md-6">
+        <button type="submit" value="" class="btn btn-success btn-block btn-lg">Guardar</button>
+        <a asp-page="/WorkIO/CandidatosRegistrados" class="btn btn-primary btn-block btn-lg">Cancelar</a>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -33,6 +33,7 @@
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
                     <div class="dropdown-menu">
                         <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                        <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
                         <a asp-page="/WorkIO/Referencias" class="dropdown-item">Agregar Referencias</a>
                     </div>
                 </div>

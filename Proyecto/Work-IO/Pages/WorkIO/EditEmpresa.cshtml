@@ -1,0 +1,45 @@
+﻿@page "{id:int?}"
+@model Work_IO.Pages.WorkIO.EditEmpresaModel
+@{
+    ViewData["Title"] = "EditEmpresa";
+}
+
+<h1>Edit Empresa - @Model.Empresa.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Empresa.Id" type="hidden" />
+    <div>
+        <label asp-for="Empresa.Nombre"></label>
+        <div>
+            <input asp-for="Empresa.Nombre" class="form-control form-text"/>
+            <span asp-validation-for="Empresa.Nombre"></span>
+        </div>
+
+        <label asp-for="Empresa.NomContacto"></label>
+        <div>
+            <input asp-for="Empresa.NomContacto" class="form-control form-text"/>
+            <span asp-validation-for="Empresa.NomContacto"></span>
+        </div>
+
+        <label asp-for="Empresa.NumContacto"></label>
+        <div>
+            <input asp-for="Empresa.NumContacto" class="form-control form-text"/>
+            <span asp-validation-for="Empresa.NumContacto"></span>
+        </div>
+
+        <label asp-for="Empresa.Email"></label>
+        <div>
+            <input asp-for="Empresa.Email" class="form-control form-text"/>
+            <span asp-validation-for="Empresa.Email"></span>
+        </div>
+
+    </div>
+
+    <div class="col-xs-6 col-md-6">
+        <button type="submit" value="" class="btn btn-success btn-block btn-lg">Guardar</button>
+        <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-primary btn-block btn-lg">Cancelar</a>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

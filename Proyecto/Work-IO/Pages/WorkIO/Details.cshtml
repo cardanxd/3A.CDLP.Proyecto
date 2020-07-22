@@ -39,5 +39,48 @@
     <div class="col-sm-10">
         <label class="form-control form-text" role="textbox">@Model.Orden.FechaLimite</label>
     </div>
-    <a asp-page="/WorkIO/OrdenesRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a>
 </div>
+@if (Model.EmpresaList.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.EmpresaList.FirstOrDefault().Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.EmpresaList.FirstOrDefault().Nombre)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.EmpresaList.FirstOrDefault().NomContacto)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.EmpresaList.FirstOrDefault().NumContacto)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.EmpresaList.FirstOrDefault().Email)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.EmpresaList)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <td>@Html.DisplayFor(m => item.NomContacto)</td>
+                    <td>@Html.DisplayFor(m => item.NumContacto)</td>
+                    <td>@Html.DisplayFor(m => item.Email)</td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                            <div class="dropdown-menu">
+                                <a asp-page="/WorkIO/DetailsEmpresa" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                                <a asp-page="/WorkIO/EditEmpresa" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center border">
+        <p class="text-danger">No hay empresas registradas.</p>
+        <a href="/WorkIO/RegisterEmpresa" title="Registro empresa" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+    </div>
+}
+<a asp-page="/WorkIO/OrdenesRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a>

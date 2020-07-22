@@ -162,3 +162,6 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Raz
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\NotFound.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DetailsCandidato.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DetailsEmpresa.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditEmpresa.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditCandidato.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditOrden.cshtml.g.cs

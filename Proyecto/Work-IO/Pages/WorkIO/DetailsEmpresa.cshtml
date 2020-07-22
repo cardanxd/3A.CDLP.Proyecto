@@ -35,4 +35,5 @@
         <label class="form-control form-text" role="textbox">@Model.Empresa.Direccion</label>
     </div>
     <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-secondary btn-block btn-lg">Regresar</a>
+    <a asp-page="/WorkIO/EditEmpresa" asp-route-id="@Model.Empresa.Id" class="btn btn-primary btn-block btn-lg">Edit</a>
 </div>

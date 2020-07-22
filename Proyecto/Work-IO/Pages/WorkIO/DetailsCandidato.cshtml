@@ -3,55 +3,59 @@
 @{
     ViewData["Title"] = "DetailsCandidato";
 }
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div class="container-fluid">
-    <form method="post" enctype="multipart/form-data">
-        <div class="container-page">
-            <h3 class="dark-grey">Detalles del Candidato</h3>
-            <div class="form-group col-lg-5">
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.Nombre"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.Nombre</label>
-                </div>
+<h1 class="dark-grey">Detalles del Candidato @Model.Candidato.Id</h1>
+<form method="post" class="col-md-12 row">
+    <div class="col-md-6 row">
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.Sexo"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.Sexo</label>
-                </div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.OrdenID"></label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.OrdenID</label>
+        </div><br />
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.Edad"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.Edad</label>
-                </div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.Nombre">Nombre:</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.Nombre</label>
+        </div><br />
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.FNacimiento"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.FNacimiento</label>
-                </div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.Sexo">Sexo:</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.Sexo</label>
+        </div>
 
-            </div>
-            <div class="form-group col-lg-1"></div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.Edad">Edad:</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.Edad</label>
+        </div>
 
-            <div class="form-group col-lg-5">
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.LNacimiento"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.LNacimiento</label>
-                </div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.FNacimiento">Fecha de nacimiento</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.FNacimiento</label>
+        </div>
+    </div>
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.Nacionalidad"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.Nacionalidad</label>
-                </div>
+    <div class="col-md-6 row">
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.LNacimiento">Lugar de nacimiento</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.LNacimiento</label>
+        </div>
 
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2" asp-for="Candidato.ECivil"></label>
-                    <label class="form-control form-text" role="textbox">@Model.Candidato.ECivil</label>
-                </div>
-                <a asp-page="/WorkIO/CandidatosRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a>
-            </div>
-         </div>
-    </form>
-</div>
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.Nacionalidad">Nacionalidad</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.Nacionalidad</label>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.ECivil">Estado Civil:</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.ECivil</label>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label" asp-for="Candidato.CreatedAT">Fecha de registro</label>
+            <label class="form-control form-text" role="textbox">@Model.Candidato.CreatedAT</label>
+        </div>
+    </div>
+
+    <div class="col-md-6 row"><a asp-page="/WorkIO/CandidatosRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
+    <div class="col-md-6 row"><a asp-page="/WorkIO/EditCandidato" asp-route-id="@Model.Candidato.Id" class="btn btn-primary btn-block btn-lg">Edit</a></div>
+</form>
