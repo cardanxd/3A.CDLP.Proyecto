@@ -34,7 +34,7 @@
     <div class="col-sm-10">
         <label class="form-control form-text" role="textbox">@Model.Empresa.Direccion</label>
     </div>
-    
+    <input type="submit" class="form-control" onclick="generatedPdfFile()" value="Pdf">
 </div>
 <h1 class="dark-grey">Ordenes</h1>
 @if (Model.OrdenList.Any())
@@ -80,3 +80,26 @@ else
     </div>
 }
 <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-secondary btn-block btn-lg">Regresar</a>
+
+
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+
+    <script type="text/javascript">
+
+        function generatedPdfFile() {
+
+            // create the window before the callback
+            var win = window.open('', '_blank');
+            var docDefinition = {
+                content: [
+                    'This is an sample PDF printed with pdfMake'
+                ]
+            };
+
+            pdfMake.createPdf(docDefinition).open({}, win);
+        }
+    </script>
+}

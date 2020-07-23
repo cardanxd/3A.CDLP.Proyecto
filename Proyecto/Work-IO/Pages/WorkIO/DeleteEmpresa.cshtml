@@ -1,0 +1,62 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.DeleteEmpresaModel
+@{
+    ViewData["Title"] = "DeleteEmpresa";
+}
+
+<h1>¿Está seguro que desea eliminar la Empresa? #@Model.Empresa.Id</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Id Referencia:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.Id)
+        </dd>
+        <dt class="col-sm-3">
+            Nombre:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.Nombre)
+        </dd>
+        <dt class="col-sm-3">
+            Contacto:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.NomContacto)
+        </dd>
+        <dt class="col-sm-3">
+            Teléfono:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.NumContacto)
+        </dd>
+        <dt class="col-sm-3">
+            Dirección:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayNameFor(model => model.Empresa.Direccion)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de registro:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.CreatedAT)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de actualización:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Empresa.UpdatedAT)
+        </dd>
+
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Empresa.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-page="./EmpresasRegistradas">Cancelar</a>
+    </form>
+
+</div>

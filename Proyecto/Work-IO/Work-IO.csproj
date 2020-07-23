@@ -30,4 +30,8 @@
     <ProjectReference Include="..\WorkIO.Services\WorkIO.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\pdfmake\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,51 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.DeleteOrdenModel
+@{
+    ViewData["Title"] = "DeleteOrden";
+}
+
+<h1>¿Está seguro que desea eliminar el Orden? #@Model.Orden.Id</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Titulo del Orden:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Orden.Nombre)
+        </dd>
+        <dt class="col-sm-3">
+            Puesto Solicitado:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Orden.TipoContrato)
+        </dd>
+        <dt class="col-sm-3">
+            Descripción:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Orden.Descripcion)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de creación:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Orden.CreatedAT)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de actualización:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Orden.UpdatedAT)
+        </dd>
+
+
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Orden.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-page="./OrdenesRegistrados">Cancelar</a>
+    </form>
+
+</div>

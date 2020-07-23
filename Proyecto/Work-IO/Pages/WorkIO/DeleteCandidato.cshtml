@@ -1,0 +1,57 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.DeleteCandidatoModel
+@{
+    ViewData["Title"] = "DeleteCandidato";
+}
+
+<h1>¿Está seguro que desea eliminar el Candidato? #@Model.Candidato.Id</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Nombre:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.Nombre)
+        </dd>
+        <dt class="col-sm-3">
+            Sexo:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.Sexo)
+        </dd>
+        <dt class="col-sm-3">
+            Edad:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.Edad)
+        </dd>
+        <dt class="col-sm-3">
+            Nacionalidad:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.Nacionalidad)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de registro:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.CreatedAT)
+        </dd>
+        <dt class="col-sm-3">
+            Fecha de actualización:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Candidato.UpdatedAT)
+        </dd>
+
+
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Candidato.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-page="./CandidatosRegistrados">Cancelar</a>
+    </form>
+
+</div>
