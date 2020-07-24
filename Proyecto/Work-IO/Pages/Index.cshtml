@@ -17,21 +17,19 @@
                 <h2 class="text-center">Iniciar sesion</h2>
                 <form action="" class="login-form">
                     <div class="form-group">
-                        <label for="Email" class="text-uppercase">Usuario</label>
-                        <input type="text" name="email" value="" placeholder="Escribir email" class="form-control" required/>
+                        <label asp-for="Usuario.UserName" class="text-uppercase">Usuario</label>
+                        <input type="text" asp-for="Usuario.UserName" placeholder="Usuario" class="form-control" required/>
 
                     </div>
                     <div class="form-group">
-                        <label for="Password" class="text-uppercase">Password</label>
-                        <input type="password" name="password" value="" placeholder="Escribir Cotraseña" class="form-control" required/>
+                        <label asp-for="Usuario.Password" class="text-uppercase">Password</label>
+                        <input type="password" asp-for="Usuario.Password" placeholder="Password" class="form-control" required/>
                     </div>
 
 
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" checked="checked" name="remember"> Recordar usuario
-                        </label>
-                        <button type="submit" value="Login" asp-page-handler="Login" class="btn btn-login float-right">Iniciar sesion</button>
+                        <a asp-route-Id="Usuario.Id" class="btn-dark">Login</a>
+                        <a href="/RegisterUser" title="Register" class="btn-dark">Registrar usuario</a>
                     </div>
 
                 </form>
@@ -42,20 +40,10 @@
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <div class="banner-text">
-                                    <h2>Work IO</h2>
-                                    <p>Empresa outsourcing de empresas clientes que le delegan el seguimiento de sus contrataciones por medio de las referencias laborales.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <div class="banner-text">
                                     <h2>Work IO</h2>

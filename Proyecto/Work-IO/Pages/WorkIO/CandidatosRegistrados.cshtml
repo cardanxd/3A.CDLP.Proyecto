@@ -31,13 +31,15 @@
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
-                    <div class="dropdown-menu">
-                        <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
-                        <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
-                        <a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">Eliminar</a>
-                        <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles Referencia</a>
-                        <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar Referencias</a>
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Candidato</li>
+                        <li><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a></li>
+                        <li><a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a></li>
+                        <li><a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">Eliminar</a></li>
+                        <li class="dropdown-header">Referencia</li>
+                        <li><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a></li>
+                        <li><a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a></li>
+                    </ul>
                 </div>
              </td>
         </tr>
