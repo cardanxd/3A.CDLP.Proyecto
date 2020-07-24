@@ -58,14 +58,53 @@
 
 </form>
 
+
+<h1 class="dark-grey">Referencias</h1>
+@if (Model.ReferenciaList.Any())
+{<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomEmpresa)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().Telefono)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomInformante)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomJefe)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ReferenciaList)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(m => item.NomEmpresa)</th>
+                    <td>@Html.DisplayFor(m => item.Telefono)</td>
+                    <td>@Html.DisplayFor(m => item.NomInformante)</td>
+                    <td>@Html.DisplayFor(m => item.NomJefe)</td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                            <div class="dropdown-menu">
+                                <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                                <a asp-page="/WorkIO/Referencias" class="dropdown-item">Agregar Referencias</a>
+                                <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
 <h1 class="dark-grey">Ordenes</h1>
 @if (Model.OrdenList.Any())
 {<table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Id)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Nombre)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().EmpresaID)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Nombre)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().TipoContrato)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().FechaLimite)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Descripcion)</th>
@@ -76,9 +115,8 @@
             @foreach (var item in Model.OrdenList)
             {
                 <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                    <th scope="row">@Html.DisplayFor(m => item.EmpresaID)</th>
                     <td>@Html.DisplayFor(m => item.Nombre)</td>
-                    <td>@Html.DisplayFor(m => item.EmpresaID)</td>
                     <td>@Html.DisplayFor(m => item.TipoContrato)</td>
                     <td>@Html.DisplayFor(m => item.FechaLimite)</td>
                     <td>@Html.DisplayFor(m => item.Descripcion)</td>
@@ -87,7 +125,6 @@
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
                             <div class="dropdown-menu">
                                 <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
-                                <a asp-page="/WorkIO/EditOrden" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
                             </div>
                         </div>
                     </td>
@@ -95,12 +132,5 @@
             }
         </tbody>
     </table>
-}
-else
-{
-    <div class="text-center border">
-        <p class="text-danger">No hay candidatos registrados.</p>
-        <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
-    </div>
 }
 <div class="col-md-6 row"><a asp-page="/WorkIO/CandidatosRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>

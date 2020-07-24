@@ -15,10 +15,13 @@ namespace Work_IO.Pages.WorkIO
         public Candidato Candidato { get; private set; }
         private readonly IRepository<Orden> repositoryOrden;
         public IEnumerable<Orden> OrdenList { get; set; }
-        public DetailsCandidatoModel(IRepository<Candidato> repository, IRepository<Orden> repositoryOrden)
+        private readonly IRepository<Referencia> repositoryReferencia;
+        public IEnumerable<Referencia> ReferenciaList { get; set; }
+        public DetailsCandidatoModel(IRepository<Candidato> repository, IRepository<Orden> repositoryOrden, IRepository<Referencia> repositoryReferencia)
         {
             this.repository = repository;
             this.OrdenList = repositoryOrden.GetAll();
+            this.ReferenciaList = repositoryReferencia.GetAll();
         }
         public IActionResult OnGet(int id)
         {

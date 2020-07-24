@@ -159,7 +159,6 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Raz
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\Test.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\OrdenesRegistrados.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\Details.cshtml.g.cs
-D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\NotFound.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DetailsCandidato.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DetailsEmpresa.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditEmpresa.cshtml.g.cs
@@ -168,3 +167,7 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Raz
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DeleteEmpresa.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DeleteCandidato.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DeleteOrden.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\DetailsReferencia.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditReferencia.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\NotFound.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\ReferenciaId.cshtml.g.cs

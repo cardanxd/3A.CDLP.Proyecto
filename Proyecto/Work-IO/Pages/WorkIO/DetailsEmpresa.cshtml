@@ -95,11 +95,41 @@ else
             var win = window.open('', '_blank');
             var docDefinition = {
                 content: [
-                    'This is an sample PDF printed with pdfMake'
+
+
+                    
+
+                    'This is an sample PDF printed with pdfMake',
+
+                    { text: 'lightHorizontalLines:', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
+                    {
+                        style: 'tableExample',
+                        table: {
+                            headerRows: 1,
+                            body: [
+                                [{ text: 'Header 1', style: 'tableHeader' }, { text: 'Header 2', style: 'tableHeader' }, { text: 'Header 3', style: 'tableHeader' }],
+                                ['Sample value 1)', 'Sample value 2', 'Sample value 3'],
+                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
+                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
+                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
+                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
+                            ]
+                        },
+                        layout: 'lightHorizontalLines'
+                    }
+
+
+
+
+
+
+
                 ]
             };
 
             pdfMake.createPdf(docDefinition).open({}, win);
+        
         }
     </script>
+
 }

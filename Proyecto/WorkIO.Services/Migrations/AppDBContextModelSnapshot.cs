@@ -132,12 +132,7 @@ namespace WorkIO.Services.Migrations
                     b.Property<DateTime?>("UpdatedAT")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Empresas");
                 });
@@ -181,47 +176,6 @@ namespace WorkIO.Services.Migrations
                     b.HasIndex("EmpresaID");
 
                     b.ToTable("Ordens");
-                });
-
-            modelBuilder.Entity("WorkIO.Models.Persona", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAT")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Telefono")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAT")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId")
-                        .IsUnique();
-
-                    b.ToTable("Persona");
                 });
 
             modelBuilder.Entity("WorkIO.Models.Referencia", b =>
@@ -342,27 +296,11 @@ namespace WorkIO.Services.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WorkIO.Models.Empresa", b =>
-                {
-                    b.HasOne("WorkIO.Models.Usuario", null)
-                        .WithMany("Empresas")
-                        .HasForeignKey("UsuarioId");
-                });
-
             modelBuilder.Entity("WorkIO.Models.Orden", b =>
                 {
                     b.HasOne("WorkIO.Models.Empresa", "Empresa")
                         .WithMany("Ordens")
                         .HasForeignKey("EmpresaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WorkIO.Models.Persona", b =>
-                {
-                    b.HasOne("WorkIO.Models.Usuario", "Usuario")
-                        .WithOne("Persona")
-                        .HasForeignKey("WorkIO.Models.Persona", "UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

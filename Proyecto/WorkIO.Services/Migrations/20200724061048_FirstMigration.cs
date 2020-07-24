@@ -3,10 +3,30 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WorkIO.Services.Migrations
 {
-    public partial class Singapur : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Empresas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedAT = table.Column<DateTime>(nullable: false),
+                    UpdatedAT = table.Column<DateTime>(nullable: true),
+                    Status = table.Column<bool>(nullable: false),
+                    Nombre = table.Column<string>(nullable: false),
+                    NomContacto = table.Column<string>(nullable: false),
+                    NumContacto = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Direccion = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Empresas", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
@@ -22,59 +42,6 @@ namespace WorkIO.Services.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Empresas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedAT = table.Column<DateTime>(nullable: false),
-                    UpdatedAT = table.Column<DateTime>(nullable: true),
-                    Status = table.Column<bool>(nullable: false),
-                    Nombre = table.Column<string>(nullable: false),
-                    NomContacto = table.Column<string>(nullable: false),
-                    NumContacto = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
-                    Direccion = table.Column<string>(nullable: true),
-                    UsuarioId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Empresas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Empresas_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Persona",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedAT = table.Column<DateTime>(nullable: false),
-                    UpdatedAT = table.Column<DateTime>(nullable: true),
-                    Status = table.Column<bool>(nullable: false),
-                    Nombre = table.Column<string>(nullable: false),
-                    Apellido = table.Column<string>(nullable: false),
-                    Telefono = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    UsuarioId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Persona", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Persona_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -202,20 +169,9 @@ namespace WorkIO.Services.Migrations
                 column: "CandidatoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Empresas_UsuarioId",
-                table: "Empresas",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ordens_EmpresaID",
                 table: "Ordens",
                 column: "EmpresaID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Persona_UsuarioId",
-                table: "Persona",
-                column: "UsuarioId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Referencias_CandidatoID",
@@ -229,10 +185,10 @@ namespace WorkIO.Services.Migrations
                 name: "Documentos");
 
             migrationBuilder.DropTable(
-                name: "Persona");
+                name: "Referencias");
 
             migrationBuilder.DropTable(
-                name: "Referencias");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Candidatos");
@@ -242,9 +198,6 @@ namespace WorkIO.Services.Migrations
 
             migrationBuilder.DropTable(
                 name: "Empresas");
-
-            migrationBuilder.DropTable(
-                name: "Usuarios");
         }
     }
 }

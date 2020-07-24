@@ -8,15 +8,14 @@ namespace WorkIO.Models
 {
     public class Usuario:BaseEntity
     {
-        [Required]
+        [Required(ErrorMessage = "Usuario is required")]
         [MinLength(6, ErrorMessage ="User Name should at contain 4 character")]
         public string UserName { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Password is required")]
         [MinLength(6, ErrorMessage = "Password should at contain 3 character")]
         public string Password { get; set; }
 
-        //Navegavilidad
-        public Persona Persona { get; set; }
-        public ICollection<Empresa> Empresas { get; set; }
+
     }
 }
