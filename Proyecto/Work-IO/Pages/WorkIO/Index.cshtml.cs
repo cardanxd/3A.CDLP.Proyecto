@@ -9,6 +9,10 @@ namespace Work_IO.Pages.WorkIO
 {
     public class IndexModel : PageModel
     {
+        public IActionResult Login()
+        {
+            return Page();
+        }
         public void OnGet()
         {
 

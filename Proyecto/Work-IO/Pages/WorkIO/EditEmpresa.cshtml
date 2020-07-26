@@ -4,7 +4,7 @@
     ViewData["Title"] = "EditEmpresa";
 }
 
-<h1>Edit Empresa - @Model.Empresa.Id</h1>
+<h1>Editar empresa @Model.Empresa.Nombre</h1>
 <form method="post">
     <div asp-validation-summary="All"></div>
     <input asp-for="Empresa.Id" type="hidden" />
@@ -33,12 +33,19 @@
             <span asp-validation-for="Empresa.Email"></span>
         </div>
 
+        <label asp-for="Empresa.Direccion"></label>
+        <div>
+            <input asp-for="Empresa.Direccion" class="form-control form-text" />
+        </div>
+
     </div>
-    <div class="col-xs-6 col-md-6">
-        <button type="submit" value="" class="btn btn-success btn-block btn-lg">Guardar</button>
-        <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-primary btn-block btn-lg">Cancelar</a>
-    </div>
-</form>
+</form><br />
+<div>
+    <button type="submit" value="" class="btn btn-success">Guardar</button>
+    <a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-primary">Cancelar</a>
+</div>
+
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -13,12 +13,12 @@
         <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All"></div>
             <input asp-for="Referencia.Id" type="hidden" />
-            <h3 class="dark-grey">Agregar Referencias</h3>
+            <h3 class="dark-grey">Editar referencia</h3>
             <div class="col-md-6">
 
                 <div class="form-group col-lg-12">
                     <label asp-for="Referencia.CandidatoID">Candidato:</label>
-                    <select asp-for="Referencia.CandidatoID" asp-items="@(new SelectList(Model.CandidatoList,"Id","Nombre"))">
+                    <select class="custom-select" asp-for="Referencia.CandidatoID" asp-items="@(new SelectList(Model.CandidatoList,"Id","Nombre"))">
                         <option>Seleccione el candidato</option>
                     </select>
                 </div>

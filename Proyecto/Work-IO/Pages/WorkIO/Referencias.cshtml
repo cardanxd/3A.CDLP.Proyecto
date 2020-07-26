@@ -16,7 +16,7 @@
 
                 <div class="form-group col-lg-12">
                     <label asp-for="Referencia.CandidatoID">Candidato:</label>
-                    <select asp-for="Referencia.CandidatoID" asp-items="@(new SelectList(Model.CandidatoList,"Id","Nombre"))">
+                    <select class="custom-select" asp-for="Referencia.CandidatoID" asp-items="@(new SelectList(Model.CandidatoList,"Id","Nombre"))">
                         <option>Seleccione el candidato</option>
                     </select>
                 </div>

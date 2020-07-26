@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,20 +14,38 @@ namespace Work_IO.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly IRepository<Usuario> repository;
-        public Usuario Usuario { get; private set; }
-
-        public IndexModel(ILogger<IndexModel> logger, IRepository<Usuario> repository)
+        public IndexModel(IRepository<Usuario> repository)
         {
-            _logger = logger;
             this.repository = repository;
         }
-        public IActionResult OnPost()
+
+        public Usuario Usuario { get; set; }
+        public IActionResult OnPostAsync(string NombreUsuario, string clave)
         {
-            Usuario = repository.GetAll().FirstOrDefault(x => x.UserName == Usuario.UserName && x.Password == Usuario.Password);
+            Usuario = repository.GetAll().FirstOrDefault(s => s.UserName == NombreUsuario && s.Password == clave);
             if (Usuario.Id > 0)
-                return RedirectToPage("./Index");
+            {
+                if (Usuario.Id > 0)
+                {
+                    Console.WriteLine("Entre");
+                    return RedirectToPage("/WorkIO/Index");
+                }
+                else
+                {
+                    Console.WriteLine("contraseña invalida");
+                    return Page();
+                }
+            }
+            else
+            {
+                Console.WriteLine("no se");
+                return Page();
+            }
+        }
+
+        public IActionResult Login()
+        {
             return Page();
         }
 

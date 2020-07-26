@@ -3,54 +3,85 @@
 @{
     ViewData["Title"] = "OrdenesRegistrados";
 }
+<head>
+    <title>Glyphicon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<head>
+    <title>Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
 
-<h1>Ordenes</h1>
-@if (Model.Ordenes.Any())
-{<table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Id)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Nombre)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().EmpresaID)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().TipoContrato)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().FechaLimite)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Descripcion)</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Ordenes)
-            {
-            <tr>
-                <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                <td>@Html.DisplayFor(m => item.Nombre)</td>
-                <td>@Html.DisplayFor(m => item.EmpresaID)</td>
-                <td>@Html.DisplayFor(m => item.TipoContrato)</td>
-                <td>@Html.DisplayFor(m => item.FechaLimite)</td>
-                <td>@Html.DisplayFor(m => item.Descripcion)</td>
-                <td>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
-                        <div class="dropdown-menu">
-                            <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
-                            <a asp-page="/WorkIO/EditOrden" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
-                            <a asp-page="/WorkIO/DeleteOrden" asp-route-Id="@item.Id" class="dropdown-item">Eliminar</a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
-    <div class="row">
-        <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/Index" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
-        <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/RegisterOrden" class="btn btn-primary btn-block btn-lg">Registrar</a></div>
-    </div>
-}
-else
-{
-    <div class="text-center border">
-        <p class="text-danger">No hay ordenes registrados.</p>
-        <a href="/WorkIO/RegisterOrden" title="Registro de ordenes" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
-    </div>
-}
+
+<body>
+    <h1>Ordenes</h1>
+    @if (Model.Ordenes.Any())
+    {<table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Nombre)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().EmpresaID)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().TipoContrato)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().FechaLimite)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Ordenes.FirstOrDefault().Descripcion)</th>
+                    <td scope="col"><input id="myInput" type="text" placeholder="Buscar orden"></td>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var item in Model.Ordenes)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(m => item.Id)</th>
+                        <td><a asp-page="/WorkIO/Details" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.Nombre)</a></td>
+                        <td><a asp-page="/WorkIO/DetailsEmpresa" asp-route-Id="@item.EmpresaID">@Html.DisplayFor(m => item.EmpresaID)</a></td>
+                        <td>@Html.DisplayFor(m => item.TipoContrato)</td>
+                        <td>@Html.DisplayFor(m => item.FechaLimite)</td>
+                        <td>@Html.DisplayFor(m => item.Descripcion)</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                                <div class="dropdown-menu">
+                                    <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">
+                                        <span class="glyphicon glyphicon-list"></span> Detalles
+                                    </a>
+                                    <a asp-page="/WorkIO/EditOrden" asp-route-Id="@item.Id" class="dropdown-item">
+                                        <span class="glyphicon glyphicon-pencil"></span> Editar
+                                    </a>
+                                    <a asp-page="/WorkIO/DeleteOrden" asp-route-Id="@item.Id" class="dropdown-item">
+                                        <span class="glyphicon glyphicon-trash"></span> Eliminar
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="text-center border">
+            <p class="text-danger">No hay ordenes registrados.</p>
+            <a href="/WorkIO/RegisterOrden" title="Registro" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+        </div>
+    }
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</body>

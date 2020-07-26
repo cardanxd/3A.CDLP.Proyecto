@@ -4,7 +4,7 @@
     ViewData["Title"] = "DeleteOrden";
 }
 
-<h1>¿Está seguro que desea eliminar el Orden? #@Model.Orden.Id</h1>
+<h1>Detalles de la orden #@Model.Orden.Id</h1>
 <div>
     <hr />
     <dl class="row">
@@ -44,7 +44,38 @@
     </dl>
     <form method="post">
         <input type="hidden" asp-for="Orden.Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+            Eliminar
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">¿Está seguro que desea eliminar la orden #@Model.Orden.Id?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Si elimina la orden perderá los datos y candidatos registrados en ella.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
         <a class="btn btn-secondary" asp-page="./OrdenesRegistrados">Cancelar</a>
     </form>
 

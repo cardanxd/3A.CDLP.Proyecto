@@ -13,9 +13,9 @@
             <h3 class="dark-grey">Registro del candidato</h3>
             <div class="col-md-12">
 
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-6">
                     <label asp-for="Candidato.OrdenID">Orden:</label>
-                    <select asp-for="Candidato.OrdenID" asp-items="@(new SelectList(Model.OrdenList,"Id","Nombre"))">
+                    <select class="custom-select-lg" asp-for="Candidato.OrdenID" asp-items="@(new SelectList(Model.OrdenList,"Id","Nombre"))">
                         <option>Seleccione la orden</option>
                     </select>
                 </div>

@@ -171,3 +171,4 @@ D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Raz
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\EditReferencia.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\NotFound.cshtml.g.cs
 D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterUser.cshtml.g.cs
+D:\carlo\Documents\Aplicaciones web\Proyecto\Work-IO\obj\Debug\netcoreapp3.1\Razor\Pages\WorkIO\ReferenciasRegistradas.cshtml.g.cs

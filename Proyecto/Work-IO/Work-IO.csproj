@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pages\WorkIO\EditCandidato.cshtml~RFf818b9d.TMP" />
     <None Remove="Pages\WorkIO\EditReferencia.cshtml.cs~RF3fa02b7.TMP" />
+    <None Remove="Pages\WorkIO\OrdenesRegistrados.cshtml~RFef92314.TMP" />
   </ItemGroup>
 
   <ItemGroup>

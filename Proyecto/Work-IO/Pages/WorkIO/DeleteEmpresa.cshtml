@@ -4,7 +4,7 @@
     ViewData["Title"] = "DeleteEmpresa";
 }
 
-<h1>¿Está seguro que desea eliminar la Empresa? #@Model.Empresa.Id</h1>
+<h1>Detalles de la empresa</h1>
 <div>
     <hr />
     <dl class="row">
@@ -55,8 +55,41 @@
     </dl>
     <form method="post">
         <input type="hidden" asp-for="Empresa.Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" />
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+            Eliminar
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">¿Está seguro que desea eliminar la empresa @Model.Empresa.Nombre?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Si elimina la empresa se perderá las ordenes y candidatos incluidos en ella.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<input type="submit" value="Eliminar" class="btn btn-danger" />-->
+
         <a class="btn btn-secondary" asp-page="./EmpresasRegistradas">Cancelar</a>
+
     </form>
 
 </div>

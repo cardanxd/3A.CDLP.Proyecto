@@ -16,7 +16,7 @@
 
                         <div class="form-group col-lg-12">
                             <label asp-for="Orden.EmpresaID">Empresa:</label>
-                            <select asp-for="Orden.EmpresaID"
+                            <select class="custom-select mb-3" asp-for="Orden.EmpresaID"
                                     asp-items="@(new SelectList(Model.EmpresaList,"Id","Nombre"))">
                                 <option>Seleccione una empresa</option>
                             </select>
@@ -36,9 +36,9 @@
                             <input type="tel" asp-for="Orden.FechaLimite" class="form-control form-text" placeholder="Fecha limite">
                             <span class="text-danger" asp-validation-for="Orden.FechaLimite"></span>
                         </div>
-
+                        <label asp-for="Orden.Descripcion">Descripcion:</label>
                         <div class="form-group col-lg-12">
-                            <label asp-for="Orden.Descripcion">Descripcion:</label>
+
                             <textarea asp-for="Orden.Descripcion" rows="5" cols="50" id="Descripcion"></textarea>
                         </div>
 

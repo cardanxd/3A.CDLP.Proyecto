@@ -4,133 +4,93 @@
     ViewData["Title"] = "DetailsCandidato";
 }
 
-<h1 class="dark-grey">Detalles del Candidato @Model.Candidato.Id</h1>
-<form method="post" class="col-md-12 row">
-    <div class="col-md-6 row">
 
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.OrdenID"></label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.OrdenID</label>
-        </div><br />
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.Nombre">Nombre:</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.Nombre</label>
-        </div><br />
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.Sexo">Sexo:</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.Sexo</label>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.Edad">Edad:</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.Edad</label>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.FNacimiento">Fecha de nacimiento</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.FNacimiento</label>
-        </div>
+<h1>Detalles del candidato</h1>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.Nombre">Nombre:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.Nombre</label>
     </div>
-
-    <div class="col-md-6 row">
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.LNacimiento">Lugar de nacimiento</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.LNacimiento</label>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.Nacionalidad">Nacionalidad</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.Nacionalidad</label>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.ECivil">Estado Civil:</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.ECivil</label>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label" asp-for="Candidato.CreatedAT">Fecha de registro</label>
-            <label class="form-control form-text" role="textbox">@Model.Candidato.CreatedAT</label>
-        </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.Sexo">Sexo:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.Sexo</label>
     </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.Edad">Edad:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.Edad</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.FNacimiento">Fecha de nacimiento:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.FNacimiento</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.LNacimiento">Lugar de nacimiento:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.LNacimiento</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.Nacionalidad">Nacionalidad:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.Nacionalidad</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" asp-for="Candidato.ECivil">Estado Civil:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.ECivil</label>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" value="CreatedAT">Fecha de creación:</label>
+    <div class="col-sm-10">
+        <label class="form-control form-text" role="textbox">@Model.Candidato.CreatedAT</label>
+    </div>
+</div>
 
-</form>
 
-
-<h1 class="dark-grey">Referencias</h1>
+<!--<h4 class="dark-grey">Referencias</h4>
 @if (Model.ReferenciaList.Any())
-{<table class="table table-striped">
+{<table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomEmpresa)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().Telefono)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomInformante)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.ReferenciaList.FirstOrDefault().NomJefe)</th>
+                <th scope="col">Candidato</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Jefe</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.ReferenciaList)
             {
-                <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.NomEmpresa)</th>
-                    <td>@Html.DisplayFor(m => item.Telefono)</td>
-                    <td>@Html.DisplayFor(m => item.NomInformante)</td>
-                    <td>@Html.DisplayFor(m => item.NomJefe)</td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
-                            <div class="dropdown-menu">
-                                <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
-                                <a asp-page="/WorkIO/Referencias" class="dropdown-item">Agregar Referencias</a>
-                                <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-
-
-
-
-<h1 class="dark-grey">Ordenes</h1>
-@if (Model.OrdenList.Any())
-{<table class="table table-striped">
-        <thead>
             <tr>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().EmpresaID)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Nombre)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().TipoContrato)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().FechaLimite)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Descripcion)</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.OrdenList)
-            {
-                <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.EmpresaID)</th>
-                    <td>@Html.DisplayFor(m => item.Nombre)</td>
-                    <td>@Html.DisplayFor(m => item.TipoContrato)</td>
-                    <td>@Html.DisplayFor(m => item.FechaLimite)</td>
-                    <td>@Html.DisplayFor(m => item.Descripcion)</td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
-                            <div class="dropdown-menu">
-                                <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
-                            </div>
+                <th scope="row"><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.CandidatoID">@Html.DisplayFor(m => item.CandidatoID)</a></th>
+                <th><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.NomEmpresa)</a></th>
+                <td>@Html.DisplayFor(m => item.NomInformante)</td>
+                <td>@Html.DisplayFor(m => item.Telefono)</td>
+                <td>@Html.DisplayFor(m => item.NomJefe)</td>
+                <td>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                        <div class="dropdown-menu">
+                            <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.CandidatoID" class="dropdown-item">Candidato</a>
+                            <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
+                            <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
+                            <a asp-page="/WorkIO/DeleteReferencia" asp-route-Id="@item.Id" class="dropdown-item">Eliminar</a>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
-}
-<div class="col-md-6 row"><a asp-page="/WorkIO/CandidatosRegistrados" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
+}-->

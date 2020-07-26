@@ -1,7 +1,7 @@
 ﻿@page
-@model Work_IO.Pages.WorkIO.EmpresasRegistradasModel
+@model Work_IO.Pages.WorkIO.ReferenciasRegistradasModel
 @{
-    ViewData["Title"] = "EmpresasRegistradas";
+    ViewData["Title"] = "ReferenciasRegistradas";
 }
 <head>
     <title>Glyphicon</title>
@@ -21,40 +21,42 @@
 </head>
 
 <body>
-    <h1>Empresas</h1>
-
-    @if (Model.Empresas.Any())
+    <h4 class="dark-grey">Referencias</h4>
+    @if (Model.ReferenciaList.Any())
     {<table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Id)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Nombre)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NomContacto)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().NumContacto)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Empresas.FirstOrDefault().Email)</th>
-                    <td scope="col"><input id="myInput" type="text" placeholder="Buscar empresa"></td>
+                    <th scope="col">Candidato</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Jefe</th>
+                    <th scope="col"><input id="myInput" type="text" placeholder="Buscar orden"></th>
                 </tr>
             </thead>
             <tbody id="myTable">
-                @foreach (var item in Model.Empresas)
+                @foreach (var item in Model.ReferenciaList)
                 {
                     <tr>
-                        <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                        <td><a asp-page="/WorkIO/DetailsEmpresa" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.Nombre)</a></td>
-                        <td>@Html.DisplayFor(m => item.NomContacto)</td>
-                        <td>@Html.DisplayFor(m => item.NumContacto)</td>
-                        <td>@Html.DisplayFor(m => item.Email)</td>
+                        <th scope="row"><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.CandidatoID">@Html.DisplayFor(m => item.CandidatoID)</a></th>
+                        <th><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.NomEmpresa)</a></th>
+                        <td>@Html.DisplayFor(m => item.NomInformante)</td>
+                        <td>@Html.DisplayFor(m => item.Telefono)</td>
+                        <td>@Html.DisplayFor(m => item.NomJefe)</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ver más</button>
                                 <div class="dropdown-menu">
-                                    <a asp-page="/WorkIO/DetailsEmpresa" asp-route-Id="@item.Id" class="dropdown-item">
+                                    <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.CandidatoID" class="dropdown-item">
+                                        <span class="glyphicon glyphicon-user"></span> Candidato
+                                    </a>
+                                    <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">
                                         <span class="glyphicon glyphicon-list"></span> Detalles
                                     </a>
-                                    <a asp-page="/WorkIO/EditEmpresa" asp-route-Id="@item.Id" class="dropdown-item">
+                                    <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">
                                         <span class="glyphicon glyphicon-pencil"></span> Editar
                                     </a>
-                                    <a asp-page="./DeleteEmpresa" asp-route-id="@item.Id" class="dropdown-item">
+                                    <a asp-page="/WorkIO/DeleteReferencia" asp-route-Id="@item.Id" class="dropdown-item">
                                         <span class="glyphicon glyphicon-trash"></span> Eliminar
                                     </a>
                                 </div>
@@ -65,14 +67,6 @@
             </tbody>
         </table>
     }
-    else
-    {
-        <div class="text-center border">
-            <p class="text-danger">No hay empresas registradas.</p>
-            <a href="/WorkIO/RegisterEmpresa" title="Registro empresa" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
-        </div>
-    }
-
     <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {

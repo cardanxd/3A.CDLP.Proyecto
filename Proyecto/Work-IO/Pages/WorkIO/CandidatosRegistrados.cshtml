@@ -4,57 +4,111 @@
     ViewData["Title"] = "CandidatosRegistrados";
 }
 
-<h1>Candidatos</h1>
-@if (Model.Candidatos.Any())
-{<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Id)</th>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().OrdenID)</th>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nombre)</th>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Edad)</th>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Sexo)</th>
-            <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nacionalidad)</th>
-            <th scope="col"></th><th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Candidatos)
-        {
-        <tr>
-            <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-            <td>@Html.DisplayFor(m => item.OrdenID)</td>
-            <td>@Html.DisplayFor(m => item.Nombre)</td>
-            <td>@Html.DisplayFor(m => item.Edad)</td>
-            <td>@Html.DisplayFor(m => item.Sexo)</td>
-            <td>@Html.DisplayFor(m => item.Nacionalidad)</td>
-            <td>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-header">Candidato</li>
-                        <li><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a></li>
-                        <li><a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a></li>
-                        <li><a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">Eliminar</a></li>
-                        <li class="dropdown-header">Referencia</li>
-                        <li><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a></li>
-                        <li><a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a></li>
-                    </ul>
-                </div>
-             </td>
-        </tr>
-        }
-    </tbody>
-</table>
- <div class="row">
-     <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/Index" class="btn btn-secondary btn-block btn-lg">Regresar</a></div>
-     <div class="col-xs-12 col-md-3"><a asp-page="/WorkIO/RegisterCandidato" class="btn btn-primary btn-block btn-lg">Registrar</a></div>
- </div>
-}
-else
-{
-<div class="text-center border">
-    <p class="text-danger">No hay candidatos registrados.</p>
-    <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
-</div>
-}
+<head>
+    <title>Glyphicon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<head>
+    <title>Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Candidatos</h1>
+
+    @if (Model.Candidatos.Any())
+    {<table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().OrdenID)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nombre)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Edad)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Sexo)</th>
+                    <th scope="col">@Html.DisplayNameFor(x => x.Candidatos.FirstOrDefault().Nacionalidad)</th>
+                    <td scope="col"><input id="myInput" type="text" placeholder="Buscar candidato"></td>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var item in Model.Candidatos)
+                {
+                    <tr>
+                        <th scope="row"><a asp-page="/WorkIO/Details" asp-route-Id="@item.OrdenID">@Html.DisplayFor(m => item.OrdenID)</a></th>
+                        <td><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.Nombre)</a></td>
+                        <td>@Html.DisplayFor(m => item.Edad)</td>
+                        <td>@Html.DisplayFor(m => item.Sexo)</td>
+                        <td>@Html.DisplayFor(m => item.Nacionalidad)</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-header">Candidato</li>
+                                    <li>
+                                        <a asp-page="/WorkIO/Details" asp-route-Id="@item.OrdenID" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-paste"></span> Orden
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-user"></span> Detalles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-pencil"></span> Editar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-trash"></span> Eliminar
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-header">Referencia</li>
+                                    <li>
+                                        <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-list"></span> Detalles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-pencil"></span> Editar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-page="/WorkIO/DeleteReferencia" asp-route-Id="@item.Id" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-trash"></span> Eliminar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="text-center border">
+            <p class="text-danger">No hay candidatos registrados.</p>
+            <a href="/WorkIO/RegisterCandidato" title="Registro" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+        </div>
+    }
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</body>

@@ -18,19 +18,15 @@
                 <form action="" class="login-form">
                     <div class="form-group">
                         <label asp-for="Usuario.UserName" class="text-uppercase">Usuario</label>
-                        <input type="text" asp-for="Usuario.UserName" placeholder="Usuario" class="form-control" required/>
+                        <input type="text" asp-for="Usuario.UserName" placeholder="Usuario" class="form-control" required />
 
                     </div>
                     <div class="form-group">
                         <label asp-for="Usuario.Password" class="text-uppercase">Password</label>
-                        <input type="password" asp-for="Usuario.Password" placeholder="Password" class="form-control" required/>
+                        <input type="password" asp-for="Usuario.Password" placeholder="Password" class="form-control" required />
                     </div>
-
-
-                    <div class="form-check">
-                        <a asp-route-Id="Usuario.Id" class="btn-dark">Login</a>
-                        <a href="/RegisterUser" title="Register" class="btn-dark">Registrar usuario</a>
-                    </div>
+                    <button type="submit" value="" class="btn btn-dark">Login</button>
+                    <a href="/RegisterUser" title="Register" class="btn btn-dark">Registrarse</a>
 
                 </form>
 

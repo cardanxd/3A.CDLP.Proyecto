@@ -4,13 +4,23 @@
     ViewData["Title"] = "DetailsEmpresa";
 }
 
-<h1>Detalles de la Empresa @Model.Empresa.Id</h1>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" asp-for="Empresa.Nombre"></label>
-    <div class="col-sm-10">
-        <label class="form-control form-text" role="textbox">@Model.Empresa.Nombre</label>
-    </div>
-</div>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<h1>Detalles de la empresa @Model.Empresa.Nombre</h1>
+<button type="submit" class="btn btn-secondary" onclick="generatedPdfFile()" value="Pdf">
+    <span class="glyphicon glyphicon-print"></span> Print PDF
+</button>
+
+
 <div class="form-group row">
     <label class="col-form-label col-sm-2" asp-for="Empresa.NomContacto"></label>
     <div class="col-sm-10">
@@ -34,14 +44,13 @@
     <div class="col-sm-10">
         <label class="form-control form-text" role="textbox">@Model.Empresa.Direccion</label>
     </div>
-    <input type="submit" class="form-control" onclick="generatedPdfFile()" value="Pdf">
 </div>
-<h1 class="dark-grey">Ordenes</h1>
+
+<!--<h1 class="dark-grey">Ordenes</h1>
 @if (Model.OrdenList.Any())
-{<table class="table table-striped">
+{<table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Id)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().Nombre)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().TipoContrato)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.OrdenList.FirstOrDefault().FechaLimite)</th>
@@ -53,17 +62,17 @@
             @foreach (var item in Model.OrdenList)
             {
                 <tr>
-                    <th scope="row">@Html.DisplayFor(m => item.Id)</th>
-                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <th scope="row"><a asp-page="/WorkIO/Details" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.Nombre)</a></th>
                     <td>@Html.DisplayFor(m => item.TipoContrato)</td>
                     <td>@Html.DisplayFor(m => item.FechaLimite)</td>
                     <td>@Html.DisplayFor(m => item.Descripcion)</td>
                     <td>
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver más</button>
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ver más</button>
                             <div class="dropdown-menu">
                                 <a asp-page="/WorkIO/Details" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
                                 <a asp-page="/WorkIO/EditOrden" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
+                                <a asp-page="/WorkIO/DeleteOrden" asp-route-Id="@item.Id" class="dropdown-item">Eliminar</a>
                             </div>
                         </div>
                     </td>
@@ -76,11 +85,9 @@ else
 {
     <div class="text-center border">
         <p class="text-danger">No hay candidatos registrados.</p>
-        <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
+        <a href="/WorkIO/RegisterCandidato" title="Registro" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
     </div>
-}
-<a asp-page="/WorkIO/EmpresasRegistradas" class="btn btn-secondary btn-block btn-lg">Regresar</a>
-
+}-->
 
 @section Scripts{
 
@@ -97,18 +104,18 @@ else
                 content: [
 
 
-                    
 
-                    'This is an sample PDF printed with pdfMake',
 
-                    { text: 'lightHorizontalLines:', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
+
+
+                    { text: 'Ordenes', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
                     {
                         style: 'tableExample',
                         table: {
                             headerRows: 1,
                             body: [
                                 [{ text: 'Header 1', style: 'tableHeader' }, { text: 'Header 2', style: 'tableHeader' }, { text: 'Header 3', style: 'tableHeader' }],
-                                ['Sample value 1)', 'Sample value 2', 'Sample value 3'],
+                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
                                 ['Sample value 1', 'Sample value 2', 'Sample value 3'],
                                 ['Sample value 1', 'Sample value 2', 'Sample value 3'],
                                 ['Sample value 1', 'Sample value 2', 'Sample value 3'],
@@ -128,7 +135,7 @@ else
             };
 
             pdfMake.createPdf(docDefinition).open({}, win);
-        
+
         }
     </script>
 
