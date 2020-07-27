@@ -7,19 +7,10 @@
     <title>Glyphicon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<head>
-    <title>Search</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</head>
-
 <body>
     <h4 class="dark-grey">Referencias</h4>
     @if (Model.ReferenciaList.Any())
@@ -39,7 +30,7 @@
                 {
                     <tr>
                         <th scope="row"><a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.CandidatoID">@Html.DisplayFor(m => item.CandidatoID)</a></th>
-                        <th><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.NomEmpresa)</a></th>
+                        <td><a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id">@Html.DisplayFor(m => item.NomEmpresa)</a></td>
                         <td>@Html.DisplayFor(m => item.NomInformante)</td>
                         <td>@Html.DisplayFor(m => item.Telefono)</td>
                         <td>@Html.DisplayFor(m => item.NomJefe)</td>

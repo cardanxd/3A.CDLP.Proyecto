@@ -4,11 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
-<section id="what-we-do">
+
+<head>
+    <title>Glyphicon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body id="what-we-do">
     <div class="container-fluid">
         <h2 class="text-center section-title h1">Bienvenido de nuevo asesor.</h2>
         <p class="text-center text-muted h2">¿Qué desea realizar? </p>
-        
+
         <div class="row mt-5">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
@@ -37,11 +47,16 @@
                         <p class="card-text">En este apartado el asesor podrá registrar y consultar candidatos.</p>
                         <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn btn-dark btn-sm">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
                         <a href="/WorkIO/CandidatosRegistrados" title="Lista de candidatos" class="btn btn-dark btn-sm">Ver Lista<i class="fa fa-angle-double-right ml-2"></i></a>
-                        <a href="/WorkIO/Referencias" title="Agregar Referencias" class="btn btn-dark btn-sm">Añadir Referencias<i class="fa fa-angle-double-right ml-2"></i></a>
+                        <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-toggle="dropdown">Referencia</button><i class="fa fa-angle-double-right ml-2"></i>
+                        <div class="dropdown-menu">
+                            <a href="/WorkIO/ReferenciasRegistradas" class="dropdown-item">Ver lista</a>
+                            <a href="/WorkIO/Referencias" title="Agregar Referencias" class="dropdown-item">Añadir Referencia</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</body>
 <!-- /Services section -->

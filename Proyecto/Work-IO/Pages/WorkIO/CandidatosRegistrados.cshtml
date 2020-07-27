@@ -8,17 +8,9 @@
     <title>Glyphicon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<head>
-    <title>Search</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -51,40 +43,26 @@
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-header">Candidato</li>
                                     <li>
-                                        <a asp-page="/WorkIO/Details" asp-route-Id="@item.OrdenID" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-paste"></span> Orden
-                                        </a>
+                                        <a asp-page="/WorkIO/Details" asp-route-Id="@item.OrdenID" class="dropdown-item">Orden</a>
                                     </li>
                                     <li>
-                                        <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-user"></span> Detalles
-                                        </a>
+                                        <a asp-page="/WorkIO/DetailsCandidato" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
                                     </li>
                                     <li>
-                                        <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-pencil"></span> Editar
-                                        </a>
+                                        <a asp-page="/WorkIO/EditCandidato" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
                                     </li>
                                     <li>
-                                        <a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-trash"></span> Eliminar
-                                        </a>
+                                        <a asp-page="./DeleteCandidato" asp-route-id="@item.Id" class="dropdown-item">Eliminar</a>
                                     </li>
                                     <li class="dropdown-header">Referencia</li>
                                     <li>
-                                        <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-list"></span> Detalles
-                                        </a>
+                                        <a asp-page="/WorkIO/DetailsReferencia" asp-route-Id="@item.Id" class="dropdown-item">Detalles</a>
                                     </li>
                                     <li>
-                                        <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-pencil"></span> Editar
-                                        </a>
+                                        <a asp-page="/WorkIO/EditReferencia" asp-route-Id="@item.Id" class="dropdown-item">Editar</a>
                                     </li>
                                     <li>
-                                        <a asp-page="/WorkIO/DeleteReferencia" asp-route-Id="@item.Id" class="dropdown-item">
-                                            <span class="glyphicon glyphicon-trash"></span> Eliminar
-                                        </a>
+                                        <a asp-page="/WorkIO/DeleteReferencia" asp-route-Id="@item.Id" class="dropdown-item">Eliminar</a>
                                     </li>
                                 </ul>
                             </div>

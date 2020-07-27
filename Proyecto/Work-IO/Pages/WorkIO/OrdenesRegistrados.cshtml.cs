@@ -26,6 +26,7 @@ namespace Work_IO.Pages.WorkIO
         public void OnGet()
         {
             Ordenes = repository.GetAll();
+            
         }
     }
 }
