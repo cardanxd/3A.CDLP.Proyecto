@@ -1,0 +1,82 @@
+﻿@page
+@model Work_IO.Pages.WorkIO.DeleteReferenciaModel
+@{
+    ViewData["Title"] = "DeleteReferencia";
+}
+
+<h1>Detalles de la referencia</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Candidato:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Referencia.CandidatoID)
+        </dd>
+        <dt class="col-sm-3">
+            Nombre de la empresa:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Referencia.NomEmpresa)
+        </dd>
+        <dt class="col-sm-3">
+            Telefono:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Referencia.Telefono)
+        </dd>
+        <dt class="col-sm-3">
+            Nombre del informante:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Referencia.NomInformante)
+        </dd>
+        <dt class="col-sm-3">
+            Nombre del jefe:
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Referencia.NomJefe)
+        </dd>
+
+
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Referencia.Id" />
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+            Eliminar
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">¿Está seguro que desea eliminar la referencia?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Si elimina la referencia no se podrá evaluar el candidato.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-secondary" asp-page="./ReferenciasRegistradas">Cancelar</a>
+    </form>
+
+</div>

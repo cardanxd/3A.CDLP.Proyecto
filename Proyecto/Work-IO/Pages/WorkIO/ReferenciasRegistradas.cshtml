@@ -58,6 +58,13 @@
             </tbody>
         </table>
     }
+    else
+    {
+        <div class="text-center border">
+            <p class="text-danger">No hay referencias agregadas.</p>
+            <a href="/WorkIO/Referencias" title="Registro" class="btn btn-dark">Agregar<i class="fa fa-angle-double-right ml-2"></i></a>
+        </div>
+    }
     <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {
