@@ -5,6 +5,7 @@
 }
 
 <h1>Detalles de la orden #@Model.Orden.Id</h1>
+<button type="submit" class="btn btn-secondary" onclick="generatedPdfFile()" value="Pdf">Print PDF</button>
 
 <div class="form-group row">
     <label class="col-form-label col-sm-2" asp-for="Orden.Nombre"></label>
@@ -114,3 +115,45 @@ else
         <a href="/WorkIO/RegisterCandidato" title="Registro candidato" class="btn-dark">Registrar<i class="fa fa-angle-double-right ml-2"></i></a>
     </div>
 }-->
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+
+    <script type="text/javascript">
+
+        function generatedPdfFile() {
+
+            // create the window before the callback
+            var win = window.open('', '_blank');
+            var docDefinition = {
+                content: [
+
+
+
+
+                    { text: 'Empresa WorIO', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
+
+                    "Datos del orden",
+                    "Nombre de la empresa: @Model.Orden.EmpresaID",
+                    "Orden: @Model.Orden.Nombre",
+                    "Tipo de contrato: @Model.Orden.TipoContrato",
+                    "Fecha limite de contrato: @Model.Orden.FechaLimite",
+                    "Descripcion: @Model.Orden.Descripcion",
+                    "Fecha de solicitud: @Model.Orden.CreatedAT"
+
+
+
+
+
+
+
+                ]
+            };
+
+            pdfMake.createPdf(docDefinition).open({}, win);
+
+        }
+    </script>
+
+}

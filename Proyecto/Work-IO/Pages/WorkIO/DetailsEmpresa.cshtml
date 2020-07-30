@@ -104,24 +104,14 @@ else
 
 
 
+                    { text: 'Empresa WorIO', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
 
-
-                    { text: 'Ordenes', fontSize: 14, bold: true, margin: [0, 20, 0, 8] },
-                    {
-                        style: 'tableExample',
-                        table: {
-                            headerRows: 1,
-                            body: [
-                                [{ text: 'Header 1', style: 'tableHeader' }, { text: 'Header 2', style: 'tableHeader' }, { text: 'Header 3', style: 'tableHeader' }],
-                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                                ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                            ]
-                        },
-                        layout: 'lightHorizontalLines'
-                    }
+                    "Datos de la empresa cliente",
+                    "Nombre de la empresa: @Model.Empresa.Nombre",
+                    "Contacto: @Model.Empresa.NomContacto",
+                    "Telefono: @Model.Empresa.NumContacto",
+                    "Correo electronico: @Model.Empresa.Email",
+                    "Direccion: @Model.Empresa.Direccion"
 
 
 
